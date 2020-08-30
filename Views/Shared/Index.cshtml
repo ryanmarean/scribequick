@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Login or Register";
+    ViewData["Header"] = "Login or Register";
+}
+
+@using ScribeQuick.Models.WrapperModels
+@model LoginRegUser
+
+<div class="container">
+    <div class="row text-left">
+        <h1 class="display-4">Welcome to ScribeQuick. Login or Sign Up!</h1>
+    </div>
+    <hr>
+    <div class="row justify-content-between">
+        <div class="col">
+            <h4>Register</h4>
+            <form asp-controller="LoginReg" asp-action="Register" method="POST" class="border border-dark p-2">
+                <div class="form-group">
+                    <label asp-for="User.FirstName"></label>
+                    <span asp-validation-for="User.FirstName" class="text-danger"></span>
+                    <input asp-for="User.FirstName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="User.LastName"></label>
+                    <span asp-validation-for="User.LastName" class="text-danger"></span>
+                    <input asp-for="User.LastName" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="User.Email"></label>
+                    <span asp-validation-for="User.Email" class="text-danger"></span>
+                    <input asp-for="User.Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="User.Password"></label>
+                    <span asp-validation-for="User.Password" class="text-danger"></span>
+                    <input asp-for="User.Password" class="form-control">
+                    <small class="form-text text-muted">Passwords must be at least 8 characters and contain a number, a letter, and a special character</small>
+                </div>
+                <div class="form-group">
+                    <label asp-for="User.Confirm"></label>
+                    <span asp-validation-for="User.Confirm" class="text-danger"></span>
+                    <input asp-for="User.Confirm" class="form-control">
+                </div>
+                <div class="row justify-content-end mr-3">
+                <button type="submit" class="btn btn-light shadow-sm">Register</button>
+                </div>
+                <div class="w-100"></div>
+            </form>
+        </div>
+        <div class="col">
+            <h4>Log In</h4>
+            <form asp-controller="LoginReg" asp-action="Login" method="POST" class="border border-dark p-2">
+                <span asp-validation-for="LoginUser.Email" class="text-danger"></span>
+                <span asp-validation-for="LoginUser.Password" class="text-danger"></span>
+                <div class="form-group">
+                    <label asp-for="LoginUser.Email"></label>
+                    <input asp-for="LoginUser.Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="LoginUser.Password"></label>
+                    <input asp-for="LoginUser.Password" class="form-control">
+                </div>
+                <div class="row justify-content-end mr-3">
+                <button type="submit" class="btn btn-light shadow-sm">Log in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

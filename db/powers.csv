@@ -1,0 +1,269 @@
+PowerId,Name,Description,IsDivine,SkillTreeName,Tier,MaximumLevel,RoleId,DeityId,Challenge,Duration,Type
+1,"Confuse Mind","Reduce the Initiative Scores of up to X enemies by X.",1,Wisdom,1,3,NULL,1,NULL,"1+X Initiative Rounds","Major Power (Curse)"
+2,"Me of the Battle-Standard","You and allies within 12’ of you may reroll X dice rolls of 1 for all attacks made.",1,Wisdom,1,3,NULL,1,"Invocation 7",Combat,"Major Power (Blessing)"
+3,Forethought,"You may reroll any dice roll of 1 where you use WIS as your tested Attribute.",1,Wisdom,1,1,NULL,1,NULL,NULL,Passive
+4,Sleep,"You get INT + number of D6 equal to Sleep level. Challenge Rating is equal to the target’s Health. If you succeed, the target falls asleep.",1,Magic,1,4,NULL,1,"Sorcery 7","1 Initiative Round","Major Power (Curse)"
+5,Befuddle,"Target gets -X to your Scores involving Social Skills, Perception, and Willpower.",1,Magic,1,3,NULL,1,"Sorcery 6","1 Initiative Round","Minor Power (Curse)"
+6,"Light Rain","A light rain pours down on the area. All enemies using Ranged Weapons get -X dice to attack, to a minimum of 1.",1,Elemental,1,3,NULL,1,"Invocation 6","1+X Initiative Rounds","Minor Power (Blessing)"
+7,"Water Barrier","Creates a barrier of water around you. Any enemies trying to attack you must pass a Challenge 5+X Willpower test.",1,Elemental,1,3,NULL,1,"Invocation 7","1+X Initiative Rounds","Major Power (Blessing)"
+8,"Knower of Hearts","You may use WIS in place of CHA for all Social Skills.",1,Wisdom,2,1,NULL,1,"Invocation 7",Session,"Minor Power (Blessing)"
+9,"Maxims of Enki","You may use your Envoy of the Watery Deep ability twice per session.",1,Wisdom,2,1,NULL,1,NULL,NULL,Passive
+10,"Wise Preparation","You may use your WIS in place of AGI when being attacked, or in place of CHA in social situations.",1,Wisdom,2,3,NULL,1,"Divination 8","X Initiative Rounds","Major Power (Blessing)"
+11,Blink,"Choose a point within 15X’. Place yourself there, ignoring obstacles.",1,Magic,2,3,NULL,1,"Invocation 7",NULL,"Major Power"
+12,Invisibility,"Double all your Defense and Stealth scores. Your movement can’t provoke Attacks of Opportunity.",1,Magic,2,2,NULL,1,"Sorcery 9","X+1 Activations","Glorious Power (Blessing)"
+13,Entrance,"Target gets -X Attack Dice.",1,Magic,2,3,NULL,1,"Sorcery 5","1 Initiative Round","Minor Power (Curse)"
+14,"Summon Minor Golem","Summons an allied Minor Golem within 3’ of you",1,Elemental,2,2,NULL,1,"Invocation 7","X+2 Initiative Rounds","Glorious Power (Summon)"
+15,Hail,"All enemies within 7+X’ take 7+X Damage. At level 3, the Damage also has Piercing 1.",1,Elemental,2,3,NULL,1,"Invocation 8",NULL,"Major Power"
+16,"Me of the Flood","While near a body of water, you get +1 to all of your Skill Scores.",1,Elemental,2,3,NULL,1,"Invocation 8","X Initiative Rounds","Minor Power (Blessing)"
+17,"Magical Might","Choose X: You get +1 AP; You get +1 Faith Point; You get +1 to your Magical Skill Scores",1,Wisdom,3,3,NULL,1,"Divination 8","X+1 Initiative Rounds","Major Power (Blessing)"
+18,"Me of Power","Your powers cost 1 AP less, to the minimum of 1. At level 3, get +1 to all Magic skill Scores.",1,Wisdom,3,3,NULL,1,"Invocation 11","X Initiative Rounds","Glorious Power (Blessing)"
+19,Doppelganger,"Creates a Doppelganger of yourself. It has X+1 AP and can attack or move, but cannot use Powers.",1,Magic,3,3,NULL,1,"Sorcery 10","X+1 Initiative Rounds","Glorious Power (Blessing)"
+20,"Forced Repetition","Target within 15’ gets: “You must repeat the same actions you took last Activation. If you don’t have enough AP, your AP becomes 0.”",1,Magic,3,2,NULL,1,"Sorcery 8","X Target Activations","Major Power (Curse)"
+21,"Summon Water Elemental","Summons an allied Water Elemental.",1,Elemental,3,3,NULL,1,"Invocation 8","X Initiative Rounds","Glorious Power (Summon)"
+22,"Tidal Weapon","Whenever your weapon deals damage, the damaged target must take a Willpower 10 test or reduce its Health to 0.",1,Elemental,3,3,NULL,1,"Invocation 7","2+X Initiative Rounds","Glorious Power (Blessing)"
+23,"Wind Gust","Push a target within 15’ up to 8X’ away from you. At level 4, you may instead push any targets up to 5X’ that are within 6’ of you.",1,Wind,1,4,NULL,2,"Invocation 8",NULL,"Major Power"
+24,"Sand Haze","All enemies within 5’ get -1 dice (to a minimum of 1) to all Skill Tests they take.",1,Wind,1,3,NULL,2,"Invocation 7","X Initiative Rounds","Major Power"
+25,"Stone Shield","You get +1 to your Block dice.",1,Earth,1,3,NULL,2,"Invocation 7","X Initiative Rounds","Major Power (Blessing)"
+26,"Mud Claw","Target within 10X’ gets: “You cannot move unless you pass a Challenge 2+X Strength Test.”",1,Earth,1,3,NULL,2,"Invocation 6","X Initiative Rounds","Major Power (Curse)"
+27,"Dark Sky","The area is covered by dark clouds. All enemies reduce their Attack Scores by 1. At Level 2, all Storms Powers that do Damage get +1 Damage. At level 3, all Storms abilities cost 1 AP less to a minimum of 1.",1,Storms,1,3,NULL,2,"Invocation 8","1+X Initiative Rounds","Major Power"
+28,"Aether Bolt","One enemy takes 4+X damage.",1,Storms,1,4,NULL,2,"Invocation 6",NULL,"Minor Power"
+29,Flight,"You can Fly up to 21’ high.",1,Wind,2,3,NULL,2,"Invocation 8","X Initiative Rounds","Major Power (Blessing)"
+30,"Air Pocket","No enemy can enter within 3X’ of you unless they pass a Challenge 8 Willpower test. ",1,Wind,2,3,NULL,2,"Invocation 8","1 Initiative Round","Major Power (Blessing)"
+31,Tremors,"Choose a point within 15’. All characters within 2X’ of that point reduce their Speed by X and cannot Sprint.",1,Earth,2,3,NULL,2,"Invocation 8",NULL,"Glorious Power"
+32,"Salt Blast","Choose a point within 10’. All enemies within 5’ of that point take a Damage 6 hit and must pass a Challenge 6+X Willpower test or become Pinned.",1,Earth,2,3,NULL,2,"Invocation 7",NULL,"Major Power"
+33,"Chain Lightning","One enemy takes a Damage 5+X hit. Then, up to X enemies within 10’ of it take a Damage 4+X hit.",1,Storms,2,3,NULL,2,"Invocation 8",NULL,"Major Power"
+34,"Pelting Rain","All enemies get -X to their Attack Scores with Ranged weapons and must pass a Challenge 5+X Willpower Test when Activating or they may only perform Minor Actions.",1,Storms,2,3,NULL,2,"Invocation 10","1+X Initiative Rounds","Major Power"
+35,Twister,"Summon a twister within 30’ of you. Any enemy caught in its path takes a Damage 9+X hit. The twister moves 5’ in a random direction at the beginning of each of your activations but can be controlled by passing a Challenge 10 Invocation test.",1,Wind,3,3,NULL,2,"Invocation 10","X+1 Initiative Rounds","Glorious Power"
+36,"Whirling Weapon","Whenever your weapon deals damage, push that target back 3X’. It must then pass a Challenge 7+X Willpower Test or become Knocked Down.",1,Wind,3,3,NULL,2,"Invocation 7","2+X Initiative Rounds","Glorious Power (Blessing)"
+37,Fissure,"Draw a line segment that is 10X’ long in front of you. All beings (except yourself) within 3’ of that line must pass a Challenge 9 Dodge test or take 15 damage.",1,Earth,3,2,NULL,2,"Invocation 11",NULL,"Glorious Power"
+38,"Seismic Stomp","All characters within 5X’ of you must pass a Challenge 7+X Willpower test or become Knocked Down and Pinned.",1,Earth,3,3,NULL,2,"Invocation 9",NULL,"Major Power"
+39,Thunderstorm,"It begins to rain and dark clouds fill the sky. At the beginning of each Initiative Round, roll a d6 for each enemy. On a 5-6, it takes a hit as if from Aether Bolt at Lvl X+6.",1,Storms,3,3,NULL,2,"Invocation 10",Combat,"Glorious Power"
+40,"Lightning Infusion","All enemies within 10X’ of you take 10 damage.",1,Storms,3,2,NULL,2,"Invocation 11",NULL,"Glorious Power"
+41,Lust,"Reduce all damage dealt to you by 1. You must move closer to enemies during your activation.",1,Sensuality,1,2,NULL,3,NULL,"X Initiative Rounds","Minor Power (Blessing"
+42,Attract,"Enemies get +X bonus dice when attacking you and get -X dice when defending against you.",1,Sensuality,1,3,NULL,3,"Invocation 7",Combat,"Major Power"
+43,"Graceful Step","Whenever you Dodge an enemy attack, you may move 3X’.",1,Sensuality,1,2,NULL,3,NULL,"1 Initiative Round","Minor Power (Blessing)"
+44,"Force Weapon","Add X bonus dice to your next Attack. These bonus dice must be split up if making a Multiple Attack action.",1,War,1,3,NULL,3,NULL,NULL,"Minor Power"
+45,Invigorate,"May only be used once per combat. You gain X+1 bonus AP for this Initiative Round.",1,War,1,3,NULL,3,"Invocation 8",NULL,"Minor Power"
+46,"Manipulate Combat","Switch the place of X+1 characters on the Initiative Queue.",1,War,1,2,NULL,3,"Invocation 8",NULL,"Major Power"
+47,"Command Ally","Up to one ally within 10’ may be given an action. The action must cost X AP or less.",1,Power,1,3,NULL,3,"Invocation 7",NULL,"Minor Power"
+48,"Encourage Ally","An ally within 6’ gets: “Ignore all status effects. You get +1 Initiative.”",1,Power,1,3,NULL,3,"Leadership 6","X+1 Initiative Rounds","Major Power (Blessing)"
+49,"Demanding Voice","Target gets: “Your next Action costs 1+X AP more. After that Action, remove this Curse.”",1,Power,1,2,NULL,3,"Invocation 7",NULL,"Minor Power (Curse)"
+50,"Seducing Glare","Target gets: “You may only take a Minor Action during your next Activation. Then remove this Curse.”",1,Sensuality,2,2,NULL,3,"Invocation 8",NULL,"Major Power (Curse)"
+51,Pheromones,"Enemies within 3’ must take a Challenge 6+X Willpower Test or all actions they take cost double AP.",1,Sensuality,2,3,NULL,3,"Invocation 9","X Initiative Rounds","Major Power"
+52,"Summon Lion","You summon an allied Lion near your side to fight with you.",1,War,2,3,NULL,3,"Invocation 8","1+X Initiative Rounds","Major Power"
+53,"Power Surge","You may use Invigorate twice per combat.",1,War,2,1,NULL,3,NULL,NULL,NULL
+54,"Whirlwind Strike","Perform a Multiple Strike attack, and get +X bonus dice to Attack against each target. These attacks get +1 Piercing.",1,War,2,3,NULL,3,NULL,NULL,"Major Power"
+55,"Command Allies","Up to two allies within 10’ may be given an action. The action must cost X AP (to a maximum of 2) or less. At level 3, may command up to 3 allies within 10’.",1,Power,2,3,NULL,3,"Invocation 9",NULL,"Major Power"
+56,Utilization,"Choose an ally within 10X’. You may use one of their Skill Ratings in place of your own. You must have at least 1 ranking in that Skill to use it.",1,Power,2,3,NULL,3,"Leadership 7","1 Initiative Round","Minor Power (Blessing)"
+57,"Sexual Transmutation","Add your Seduction rank to all your Attack and Defense Scores.",1,Sensuality,3,3,NULL,3,"Invocation 11","X Initiative Rounds","Glorious Power (Blessing)"
+58,"Primal Lure","Choose a target. It must pass a Willpower 7+X Test or you gain X points of one of their Skills, and they lose X points of that Skill.",1,Sensuality,3,3,NULL,3,"Seduction 10","1 Initiative Round","Minor Power (Curse)"
+59,"Battle Rage","All damage you deal is doubled.",1,War,3,2,NULL,3,"Invocation 10","3X Activations","Glorious Power (Blessing)"
+60,"Sap Initiative","Target within 30’ gets: “Your Initiative is 1.”",1,War,3,2,NULL,3,"Sorcery 9","X Initiative Rounds","Major Power (Curse)"
+61,"Battle Flow","May only be used once per combat. Until your next activation, actions your allies take cost no AP. You gain 2 AP when you use this power.",1,Power,3,1,NULL,3,"Invocation 12",NULL,"Glorious Power (Blessing)"
+62,Usurper,"You may use one Ally’s Class ability as if you had X ranks in that ability.",1,Power,3,3,NULL,3,"Invocation 9","X Initiative Rounds","Major Power (Blessing)"
+63,"Scramble Thoughts","Target enemy gets -X to its Social Posturing and Willpower Scores.",1,"Fate Manipulation",1,2,NULL,4,"Invocation 7",NULL,"Minor Power (Curse)"
+64,Trip,"Target must reroll its next X dice rolls of 5 or 6. ",1,"Fate Manipulation",1,2,NULL,4,"Sorcery 5",NULL,"Major Power (Curse)"
+65,"Weapon Fumble","Target gets: “Whenever you roll a 1 when Attacking, you take 1 Damage.”",1,"Fate Manipulation",1,3,NULL,4,"Sorcery 5","1+X Target Activations","Minor Power (Curse)"
+66,"Predict Defense","Choose a target. Whenever you attack that target, it gets -X defense dice.",1,Prediction,1,2,NULL,4,"Divination 7","X Initiative Rounds","Minor Power (Blessing)"
+67,"Predict Nature","Choose up to X targets within 10X, and up to X actions they’ll take in the next 3 seconds.",1,Prediction,1,3,NULL,4,"Divination 8",NULL,"Major Power"
+68,Soothsaying,"You may reroll any dice roll of 1.",1,Prediction,1,3,NULL,4,"Divination 7","X Initiative Rounds","Major Power (Blessing)"
+69,"Moonlight Revelations","You get +1 to all Skill Scores when it’s night.",1,Moon,1,1,NULL,4,NULL,Session,"Major Power (Blessing)"
+70,"Share Knowledge","An ally within 15’ can add up to X points of a Knowledge Skill you have to their own total. X can’t be greater than your own Skill.",1,Moon,1,3,NULL,4,NULL,"1 Initiative Round","Minor Power"
+71,"Will of the Tide","You get +1 to your Willpower Scores. At Level 2, get +2 instead. At Level 3, get +4 instead.",1,Moon,1,3,NULL,4,"Invocation 6","X Initiative Rounds","Minor Power (Blessing)"
+72,"Foresee Doom","Choose a target within 20’. They get: “Target must use the second-highest dice roll on its next test. The target must use the third-highest (lvl2), or fourth highest (lvl3).” ",1,"Fate Manipulation",2,3,NULL,4,"Divination 8","1 Activation","Major Power (Curse)"
+73,"Narrow The Mind","Choose a target. The next time it is attacked, it cannot use X methods of Defending (you choose): Block, Dodge, and Parry.",1,"Fate Manipulation",2,3,NULL,4,"Sorcery 10",NULL,"Major Power"
+74,Premonitions,"You may use Wisdom as your Defense Attribute.",1,Prediction,2,3,NULL,4,"Divination 7","X Initiative Rounds","Minor Power (Blessing)"
+75,"Preternatural Counter","Whenever you successfully Dodge, Block, or Parry an enemy attack, you may attack them using a Normal Attack.",1,Prediction,2,2,NULL,4,NULL,"X Initiative Rounds","Major Power (Blessing)"
+76,"Predict Attack","Enemies reduce their Attack Dice by X the next time they attack you.",1,Prediction,2,2,NULL,4,"Divination 9",NULL,"Major Power"
+77,Illuminate,"X targets get +1 bonus dice on their next test. (at Level 4, +2 bonus dice)",1,Moon,2,4,NULL,4,"Invocation 8",NULL,"Major Power"
+78,"Lunar Impressions","Add X to a Knowledge Skill.",1,Moon,2,2,NULL,4,"Invocation 9",Session,"Major Power"
+79,"Wise Teachings","Add X to the duration of any Blessing you or any allies are blessed with that has a duration.",1,Moon,2,2,NULL,4,"Invocation 9",Combat,"Glorious Power"
+80,"Control Mind","Choose a target. It must pass a Willpower 10+X test or you control it for its next activation.",1,"Fate Manipulation",3,3,NULL,4,"Sorcery 12",NULL,"Glorious Power"
+81,"Forced Repetition","Target within 15’ gets Curse: You must repeat the same actions you took last activation.",1,"Fate Manipulation",3,2,NULL,4,"Sorcery 10","X Target Activations","Major Power (Curse)"
+82,"All Possible Futures","You and all allies within 20’ may reroll any dice rolls they make.",1,Prediction,3,3,NULL,4,"Divination 11","X Activations","Glorious Power (Blessing)"
+83,"Summon Lamassu","Summon a Lamassu on your side.",1,Prediction,3,2,NULL,4,"Divination 12","X Initiative Rounds","Glorious Power"
+84,"Gravitic Burden","All enemy Actions cost +1 AP when performed within 20’ of you.",1,Moon,3,2,NULL,4,"Invocation 12","X Initiative Rounds","Glorious Power (Blessing)"
+85,"Quicksilver Rush","Double the SPD and of yourself and all allies within 30’",1,Moon,3,2,NULL,4,"Invocation 11","X+1 Initiative Rounds","Glorious Power (Blessing)"
+86,"Force Weapon","You get +X bonus dice for your next Attack Test. These bonus dice must be split up if making a Multiple Attack action.",1,Chaos,1,2,NULL,5,NULL,NULL,"Minor Power"
+87,"Induce Confusion","Target gets Curse: Whenever you activate, you must pass a Challenge 6+X Willpower test or all your Actions cost an additional AP.",1,Chaos,1,3,NULL,5,"Sorcery 7","X Target Activations","Major Power"
+88,Overpower,"You get +X bonus dice for your next Damage Test.",1,Chaos,1,2,NULL,5,NULL,NULL,"Minor Power"
+89,"Cause Fear","All enemies within 10X’ must pass a Challenge 6+X Willpower test or treat you as Fearsome.",1,Death,1,2,NULL,5,"Invocation 6",NULL,"Major Power"
+90,"Limping Plague","Target gets Curse: You get -X to your Defense Scores.",1,Death,1,3,NULL,5,"Sorcery 7","X Initiative Rounds","Major Power (Curse)"
+91,Wither,"Target enemy within 10’ must pass a Challenge 7 Willpower test or take X damage and gain Curse: You take 1 damage when you activate.",1,Death,1,3,NULL,5,"Sorcery 6","2X Target Activations","Major Power (Curse)"
+92,Guard,"You get +1 bonus dice against any type of damage. Level 3 gives you +2 bonus dice instead.",1,Protection,1,3,NULL,5,"Invocation 6","X Initiative Rounds","Major Power (Blessing)"
+93,"Raise Defenses","You and allies within 6X’ get +1 to their Defense Scores",1,Protection,1,2,NULL,5,"Invocation 7","X Initiative Rounds","Major Power (Blessing)"
+94,Regeneration,"At the beginning of each Initiative Round, you heal 1 HP.",1,Protection,1,3,NULL,5,"Healing 6","2X Initiative Rounds","Minor Power (Blessing)"
+95,"War Cry","You and allies within 3X’ get +1 bonus dice on their next Attack Test.",1,Chaos,2,3,NULL,5,"Invocation 7",NULL,"Major Power"
+96,"Chaotic Wave","All enemies within Short Range must pass a Challenge 7+X Willpower test or become Knocked Down. Any enemy that passes must pay 1 extra AP on their next action.",1,Chaos,2,3,NULL,5,"Sorcery 8",NULL,"Glorious Power"
+97,"Necrotic Wound","Whenever you deal damage to an enemy, it gets Curse: You take 1 damage at the beginning of each of your activations.",1,Death,2,1,NULL,5,"Invocation 8",Combat,"Major Power (Curse)"
+98,"Blinding Plague","Target gets Curse: You get -X to your Attack Scores.",1,Death,2,3,NULL,5,"Sorcery 7","X Initiative Rounds","Major Power (Curse)"
+99,"Remove Curse","At level 1, can remove an enemy curse on yourself or an ally within 3’. Opposed Test is against the Spell Score. Level 2 gives +1 to your Score, Level 3 gives +2 instead.",1,Protection,2,3,NULL,5,"Healing Opposed",NULL,"Minor Power"
+100,"Soul Shield","Reduce non-Magical damage done to you by X, to a minimum of 1.",1,Protection,2,2,NULL,5,"Invocation 9","2 Initiative Rounds","Major Power"
+101,"Underworld Ascension","As an additional cost to use this power, pay 1 Faith Point. Summon an Utukku. It is armed with a magical bronze axe and magical bronze armor",1,Chaos,3,3,NULL,5,"Sorcery 11","X+1 Initiative Rounds","Glorious Power"
+102,"Furious Assault","When you attack, rolls of 5 or 6 count towards Critical Hits.",1,Chaos,3,2,NULL,5,"Invocation 9","X+1 Initiative Rounds","Major Power (Blessing)"
+103,"Plague Wind","All living beings (except yourself) within 10X’ take 3+X Divine damage and get Curse: At the beginning of each of your activations, roll 1D3. You take that much Divine Damage.",1,Death,3,2,NULL,5,"Sorcery 10","X+1 Activations","Glorious Power"
+104,"Metal Rot","Target within 30’ wearing Armor loses X in their Armor Rating.",1,Death,3,2,NULL,5,"Sorcery 9",NULL,"Major Power (Curse)"
+105,"Divine Toughness","All non-magical damage you take is reduced to 0.",1,Protection,3,1,NULL,5,"Invocation 10","1 Initiative Round","Glorious Power (Blessing)"
+106,"Underworld Intervention","You and all allies within 10X’ can’t suffer negative effects or be affected by Curses.",1,Protection,3,2,NULL,5,"Invocation 10",Combat,"Glorious Power (Blessing)"
+107,Shrivel,"Target within 30’ gets -X Strength.",1,Change,1,3,NULL,6,"Sorcery 6","1 Initiative Round","Minor Power (Curse)"
+108,"Protection from Poison","You can’t be poisoned.",1,Change,1,2,NULL,6,NULL,"1 Day (1 Week at Level 2)","Minor Power (Blessing)"
+109,"Alter Shield","You get +X to your Defense Score.",1,Change,1,3,NULL,6,"Invocation 8","1 Initiative Round","Major Power (Blessing)"
+110,"Summon Minor Golem","Summons an allied Minor Golem within 3’ of you.",1,Creation,1,3,NULL,6,"Invocation 7","1+X Initiative Rounds","Glorious Power"
+111,"Create Sustenance","Creates X portions of Water or Rations. They can’t be sold.",1,Creation,1,3,NULL,6,"Healing 5",NULL,"Minor Power"
+112,Wellspring,"Creates a pool of pure water that lasts for 30X Minutes. It has a circumference of up to 10’ and up to 2’ deep.",1,Creation,1,2,NULL,6,"Invocation 6",NULL,"Minor Power"
+113,"Heal Wounds","You or an ally within 15’ regains X+1 HP.",1,Nurture,1,4,NULL,6,"Healing 6",NULL,"Minor Power"
+114,"Remove Curse","At level 1, can remove a Curse on yourself or an ally within 3’. Opposed Test is against the Spell Score. Level 2 gives +1, Level 3 gives +2.",1,Nurture,1,3,NULL,6,"Healing Opposed",NULL,"Minor Power"
+115,"Summon Lesser Animal","Summons X allied Lesser Animals.",1,Nurture,1,2,NULL,6,"Animals 7","1+X Initiative Rounds","Major Power"
+116,"Alter Speed","Target within 30’ gets +2X SPD.",1,Change,2,2,NULL,6,"Sorcery 8","1 Initiative Round","Minor Power (Blessing)"
+117,"Warp Body","Target within sight gets X Curses from this list: -1 SPD, -1 AGI, -1 RES, -1 Action Point. Each option may only be chosen once.",1,Change,2,4,NULL,6,"Sorcery 9","Duration: X Initiative Rounds","Major Power"
+118,"Summon Golem","Summons an allied Golem within 3’ of you.",1,Creation,2,3,NULL,6,"Invocation 9","1+X Initiative Rounds","Glorious Power"
+119,"Magic Link","Whenever you cast a Divine Power, it costs 1 AP less, to the minimum of 1.",1,Creation,2,2,NULL,6,"Invocation 8","X+2 Activations","Major Power (Blessing)"
+120,"Sustainer of Life","Whenever you get a Critical Power, you regain 3 Health.",1,Creation,2,1,NULL,6,NULL,NULL,Passive
+121,"Abundant Growth","Target within sight gets X benefits from this list: +1 SPD, +1 STR, +1 RES, +1 Action Point. Each option may only be chosen once.",1,Nurture,2,4,NULL,6,"Sorcery 8","X+1 Initiative Rounds","Major Power (Blessing)"
+122,"Healing Aura","You and all allies within 10’ regain X HP.",1,Nurture,2,3,NULL,6,"Healing 9",NULL,"Major Power"
+123,"Eye of Mortality","Target within 30’ gets: “At the beginning of each of your activations, halve your health (round down each time).”",1,Change,3,3,NULL,6,"Sorcery 11","X Activations","Glorious Power (Curse)"
+124,"Morph Body","You get +X to any Characteristic.",1,Change,3,2,NULL,6,"Sorcery 12",Session,"Glorious Power (Blessing)"
+125,"Summon Grand Golem","Summons an allied Grand Golem within 3’ of you.",1,Creation,3,2,NULL,6,"Invocation 11","X Initiative Rounds","Glorious Power"
+126,"Locus of Life","Summons 2D3 allied Lions or 2D6 allied Lesser Animals",1,Creation,3,3,NULL,6,"Invocation 12","X Initiative Rounds","Glorious Power"
+127,Revive,"Choose an unconscious ally. It is no longer unconscious, and has all Status Effects removed. In addition, it regains 2X Health.",1,Nurture,3,3,NULL,6,"Healing 10",NULL,"Major Power"
+128,Resurrection,"Choose a dead ally. It is no longer dead, and has all Status Effects removed. It has 1 Health.",1,Nurture,3,1,NULL,6,"Healing 12",NULL,"Glorious Power"
+129,Levitation,"You can Hover 7’.",1,"The Sun",1,4,NULL,7,"Invocation 8","X Initiative Rounds","Minor Power (Blessing)"
+130,"Blazing Weapon","Your currently equipped weapon becomes a flaming weapon. It deals an additional X Fire Damage.",1,"The Sun",1,3,NULL,7,"Invocation 7","2+X Initiative Rounds","Glorious Power (Blessing)"
+131,"Blind Enemy","Must be outside. Target gets: “Halve all dice when Attacking.”",1,"The Sun",1,2,NULL,7,"Invocation 7","X Initiative Rounds","Minor Power (Curse)"
+132,Smite,"Choose a target within 25’. It takes 2+X Fire Damage.",1,Justice,1,3,NULL,7,"Invocation 8",NULL,"Major Power"
+133,"Punish the Wicked","An Evil target within 6’ gets -X to its next non-defense Skill Test.",1,Justice,1,3,NULL,7,"Invocation 7",NULL,"Minor Power"
+134,"Sense Evil","You automatically pass Perception tests to detect Evil beings within 20’.",1,Justice,1,1,NULL,7,NULL,NULL,Passive
+135,"Sense Deception","Those trying to lie or influence you get -2 to their Social Scores.",1,Justice,1,1,NULL,7,NULL,NULL,Passive
+136,"Aura of Righteousness","All enemies within 30’ must pass a Challenge 8+X Willpower test or count you as Fearsome.",1,Aid,1,3,NULL,7,"Invocation 6",Combat,"Major Power (Blessing)"
+137,"Heal Wounds","You or an ally within 3’ regains X+1 HP.",1,Aid,1,3,NULL,7,"Healing 5",NULL,"Minor Power"
+138,"Remove Curse","At level 1, remove an enemy curse on yourself or an ally within 3’. Level 2 gives +1 to your Score.",1,Aid,1,2,NULL,7,"Healing 6",NULL,"Minor Power"
+139,Immolate,"Deal X+1 Fire Damage to all enemies within 3’.",1,"The Sun",2,3,NULL,7,"Invocation 8",NULL,"Major Power"
+140,"Shamash’s Light","When you ask for light, you illuminate an area twice as large.",1,"The Sun",2,1,NULL,7,NULL,NULL,Passive
+141,"Tempestuous Weapon","Whenever your weapon deals damage, push that target back 2X’. It’s Knocked Down if you got a Critical Hit or Damage.",1,"The Sun",2,3,NULL,7,"Invocation 9","2+X Initiative Rounds","Glorious Power (Blessing)"
+142,"Damage Reflection","Whenever you take Damage, a target enemy within 3’ takes X Divine Damage.",1,Justice,2,2,NULL,7,NULL,"1 Initiative Round","Minor Power (Blessing)"
+143,"Shamash’s Recompense","When you ask for justice, the target takes an additional X Fire Damage.",1,Justice,2,2,NULL,7,NULL,NULL,Passive
+144,"Holy Weapon","Your weapon deals 2X additional Divine damage to Evil targets.",1,Justice,2,3,NULL,7,"Invocation 9","2+X Initiative Rounds","Glorious Power (Blessing)"
+145,"Inspire Hope","Allies within line of sight can’t be affected by Status Effects. In addition, they don’t fall Unconscious if they reach 0 or less Health.",1,Aid,2,3,NULL,7,"Leadership 8",NULL,"Major Power (Blessing)"
+146,"Shamash’s Compassion","When you ask for aid, you instead regain 4+X health. ",1,Aid,2,2,NULL,7,NULL,NULL,Passive
+147,"Divine Toughness","All non-magical damage you take is reduced to 0.",1,Aid,2,2,NULL,7,"Invocation 10","3+X Activations","Glorious Power (Blessing)"
+148,"Summon Flaming Chariot","You summon a flaming chariot with a Charioteer. This counts as a chariot, except all damage from it does fire damage. Level 2 gives a Scorpion Man Archer that also rides the chariot. You can mount the Chariot as a Free Action.",1,"The Sun",3,3,NULL,7,"Invocation 12","X+1 Initiative Rounds","Glorious Power"
+149,"Banishing Weapon","Your weapon deals Magical Damage. Whenever your weapon deals damage to a Spirit or Demon, it must pass a Challenge 10+X Willpower Test. For each point it fails by, it takes 1 Divine damage.",1,Justice,3,3,NULL,7,"Invocation 11","2+X Initiative Rounds","Glorious Power (Blessing)"
+150,Invulnerability,"All damage you take is reduced to 0.",1,Aid,3,2,NULL,7,"Invocation 11","X Initiative Rounds","Glorious Power (Blessing)"
+151,"Shamash’s Grace","No ally can go below 1 HP unless already at 1 HP when this Power was cast.",1,Aid,3,1,NULL,7,"Invocation 10","1 Initiative Round","Major Power (Blessing)"
+152,"Kill Shot","When using a Ranged Weapon, you get +X to your Damage Score.",0,"The Game",1,2,2,NULL,NULL,NULL,Passive
+153,Aim,"You get +X to your Attack Score on your next attack against a declared target you are aiming at. You may use this power once per Activation. The bonus stacks until after an attack is made or a different target is chosen to Aim at.",0,"The Game",1,2,2,NULL,NULL,NULL,"Minor Action (Tactical)"
+154,"Far Sight","You count Extreme Long Range as Long Range at Level 1. At Level 2, they both count as Medium Range. At Level 3, get +1 to your Attack Scores with Ranged Weapons.",0,"The Game",1,3,2,NULL,NULL,NULL,Passive
+155,"He’s Fast!","X times per session, you may substitute SPD for STR when determining AP.",0,"The Game",2,2,2,NULL,NULL,NULL,Passive
+156,"Rapid Shot","You may use the Multiple Attack Action with a Ranged weapon at the cost of 1 additional AP. At level 2, there is no additional cost. You use one ammo per target.",0,"The Game",2,2,2,NULL,NULL,NULL,Passive
+157,"Predator’s Eye","Prereqs: Aim 1, Far Sight 1 - Whenever you Aim, you always count your target as being in Short Range unless they are at Extreme Long Range.",0,"The Game",2,1,2,NULL,NULL,NULL,Passive
+158,"Hit The Ground Running","When determining Initiative, add D3 to your Score. At Level 2, add D6 instead.",0,"The Game",2,2,2,NULL,NULL,NULL,Passive
+159,"Where’d He Go?","Prereq: He’s Fast! 1 - You can now always substitute SPD for STR when determining AP.",0,"The Game",3,1,2,NULL,NULL,NULL,Passive
+160,"Pinning Shot","Attack an enemy. If you deal damage, it is Pinned as if from a Wrestle check with a Challenge Rating of 8+X.",0,"The Game",3,2,2,NULL,NULL,NULL,"Full Attack Action (Ranged)"
+161,"Piercing Shot","Attack an enemy, and increase the Piercing of the Arrow by X. A Critical Hit or Damage permanently reduces the Target’s Armor by X.",0,"The Game",3,2,2,NULL,NULL,NULL,"Full Attack Action (Ranged)"
+162,"Summon Animal Companion","Use once per session. At level 1, can Summon an allied animal companion - Vulture, Snake, Fox, Dog, or Cat. At level 2, can summon 2 Foxes, Dogs, or Cats. You must pass an Animal Handling Test to control.",0,"Wilderness Expert",1,2,2,NULL,"Animals 6",Session,"Major Action (Tactical)"
+163,"Nature Healing","Target ally within 2’ regains X+1 lost HP.",0,"Wilderness Expert",1,2,2,NULL,"Healing 7",NULL,"Minor Power"
+164,Ranger,"You get +X to your Survival and Perception Scores",0,"Wilderness Expert",1,3,2,NULL,NULL,NULL,Passive
+165,"Summon Greater Animal Companion","Prereq: Summon Animal Companion 1 - Use once per session. Summons an allied Lion, Bull, or Bear. Must pass an Animal Handling Test to control.",0,"Wilderness Expert",2,2,2,NULL,"Animals 8","X Initiative Rounds","Major Action (Tactical)"
+166,"Man vs. Wild","You can survive X extra days without Life Essentials.",0,"Wilderness Expert",2,2,2,NULL,NULL,NULL,Passive
+167,"Night Eyes","Enemies get -X to their Stealth scores to avoid being seen by you, and you can see 10X’ further in the dark.",0,"Wilderness Expert",2,2,2,NULL,NULL,NULL,Passive
+168,"The Hunted: Reckoning","Prereq: The Hunted - You may choose up to two enemy types per session for The Hunted.",0,"Wilderness Expert",3,1,2,NULL,NULL,NULL,Passive
+169,"Crippling Attack","Attack an enemy. If you deal damage, it halves its SPD for an Initiative Round. At Level 2, it also halves its AGI.",0,"Wilderness Expert",3,2,2,NULL,NULL,NULL,"Full Attack Action"
+170,"Triumph of Nature","Prereq: Summon Greater Animal Companion 2 - Animal companions you control get +X bonus dice when attacking and dealing damage.",0,"Wilderness Expert",3,2,2,NULL,NULL,Combat,"Glorious Action"
+171,Know-It-All,"Once per session, add X bonus dice to any Knowledge Skill, even an untrained one.",0,Master,1,2,3,NULL,NULL,NULL,Passive
+172,"The Hunted","At any point during the session, choose a specific type of enemy, such as a Human Priest.. You get +1 bonus dice to Attack against targets of that type. At Level 2, get +1 bonus dice to Perception checks versus that type",0,"Wilderness Expert",2,2,2,NULL,NULL,NULL,Passive
+173,Negotiator,"You get +X to your Persuasion and Social Posturing Scores.",0,Master,1,2,3,NULL,NULL,NULL,Passive
+174,"Share Knowledge","Once per session, one ally may add X bonus dice to a Knowledge skill, even an untrained one. You must have at least X in that skill.",0,Master,1,3,3,NULL,NULL,NULL,Passive
+175,"Dedicated Practice","Reduce the Experience Point Cost to upgrade any Skill by X, to a minimum of 1.",0,Master,2,2,3,NULL,NULL,NULL,Passive
+176,"Dedicated Training","Reduce the Experience Point Cost to upgrade any Attribute by X, to a minimum of 1.",0,Master,2,2,3,NULL,NULL,NULL,Passive
+177,Tactician,"At the beginning of a combat encounter but before any Activations, you may move up to your SPD. At level 2, you can move up to double your SPD.",0,Master,2,2,3,NULL,NULL,NULL,Passive
+178,"Master Tactician","Prereq: Tactician 2 - At the beginning of a combat encounter but before any Activations, an ally may move up to your SPD. At level 2, it can move up to double your SPD, or up to 2 Allies can move up to your SPD.",0,Master,3,2,3,NULL,NULL,NULL,Passive
+179,"Show Them How It’s Done","Choose an ally within 20’. During their next Activation, they may count one of their Class Abilities as one point higher. It can’t go higher than the max level.",0,Master,3,2,3,NULL,"Knowledge 8",NULL,"Minor Action (Tactical)"
+180,"Recall Feats of Glory","Until your next activation, all actions that allies take cost 1 AP less, to a minimum of 1.",0,Master,3,1,3,NULL,"Knowledge 10",NULL,"Glorious Action (Tactical)"
+181,Assistance,"Allies within hearing distance may reroll up to X results of 1 on their next Test.",0,Leadership,1,2,3,NULL,"Leadership 5",NULL,"Minor Action (Tactical)"
+182,"Been There","Pay 1 Faith Point: You and allies within sight get +X to your Initiative Scores for the duration of combat.",0,Leadership,1,2,3,NULL,NULL,NULL,Passive
+183,"Seen That","You and allies within 10’ get +X to your Perception Scores.",0,Leadership,1,3,3,NULL,NULL,NULL,Passive
+184,"Hold Steady","Allies within hearing distance can’t be Knocked Down or Panic. They also get +X to any Willpower Scores.",0,Leadership,2,3,3,NULL,"Leadership 6","X+1 Initiative Rounds","Minor Action (Tactical)"
+185,Inspiration,"Prereq: Assistance 1 - Use X times per session. One ally within 15’ gets +X Action Points. If these Action Points are unspent in a combat, this ability may be used again.",0,Leadership,2,2,3,NULL,"Leadership 7",NULL,"Minor Action (Tactical)"
+186,"Rallying Call","Prereq: Inspiration 1 - All allies gain X Action Points.",0,Leadership,3,2,3,NULL,"Leadership 9",NULL,"Major Action (Tactical)"
+187,"A Call To Arms","Summons X Bodyguards.",0,Leadership,3,3,3,NULL,"Leadership 10","2 Initiative Rounds","Glorious Action (Tactical)"
+188,"Second Wind","All allies get Blessing: You get +3 HP. This power, if it expires, can cause a heavily wounded Champion to fall below 0 and become unconscious, or even die.",0,Leadership,3,2,3,NULL,"Leadership 9","2+X Initiative Rounds","Major Action (Tactical)"
+189,"Divine Mediator","You get a Divinity Point. It must be used to increase the level of a Power you have. If all current Powers with Points in them are at maximum level, you may spend it on a new Power.",0,Fortunes,1,1,4,NULL,NULL,NULL,Passive
+190,"The Baru","You get +X to your Divination Scores.",0,Fortunes,1,2,4,NULL,NULL,NULL,Passive
+191,"Knowledge Seeker","You get +X to your Knowledge Skill Scores.",0,Fortunes,1,3,4,NULL,NULL,NULL,Passive
+192,"Component Sorter","When using a Sorcery or Divination component to cast a power, roll a d6. On the result of a 6, the component is not lost and can be used again.",0,Fortunes,1,1,4,NULL,NULL,NULL,Passive
+193,"Expert Divine Mediator","Prereq: Divine Mediator 1 - You get a Divinity Point whenever this is taken. It must be used to increase the level of a Power you have. If all current Powers with Points in them are at maximum level, you may spend it on a new Power.",0,Fortunes,2,1,4,NULL,NULL,NULL,Passive
+194,"Read the Guts","You may reroll the next X dice on your next test. After taking that test, remove this Blessing.",0,Fortunes,2,3,4,NULL,"Divination 7",NULL,"Major Power (Blessing)"
+195,"Interpret It Differently","If you would incur a Minor Failure on a Divination Test, you may also treat it as a Minor Success. At level 2, treat it instead as just a Minor Success.",0,Fortunes,2,2,4,NULL,NULL,NULL,Passive
+196,"Master Divine Mediator","Prereq: Expert Divine Mediator 1 - You get a Divinity Point whenever this is taken. It must be used to increase the level of a Power you have. If all current Powers with Points in them are at maximum level, you may spend it on a new Power.",0,Fortunes,3,2,4,NULL,NULL,NULL,Passive
+197,"Prolong Their Misfortune","Your Curses last for X Initiative Rounds longer. If they didn’t have a duration, they now last for X Initiative Rounds.",0,Fortunes,3,2,4,NULL,NULL,NULL,Passive
+198,"Spirit Invocation","You get +5 to your INT and WIS. You get +3 to your Willpower.",0,Fortunes,3,3,4,NULL,"Divination 8","X+1 Initiative Rounds","Major Power (Blessing)"
+199,Practitioner,"You get +X to your Sorcery Scores.",0,Sorcery,1,2,4,NULL,NULL,NULL,Passive
+200,"Dispel Power","At level 1, can dispel an enemy Blessing or Curse. Opposed Test is against the Spell type the enemy used. Level 2 gives +1 to your Score.",0,Sorcery,1,2,4,NULL,"Faith + Invocation Opposed",NULL,"Major Power"
+201,"Minor Hex","Target within 15 feet gets -X to its next Score.",0,Sorcery,1,3,4,NULL,"Sorcery 7","1 Activation","Minor Power (Curse)"
+202,"Enfeebling Curse","Target within 25’ gets -X to its Physical Characteristics. This does not affect Health or Carry Weight.",0,Sorcery,2,2,4,NULL,"Sorcery 8","X Initiative Rounds","Glorious Power (Curse)"
+203,"Debilitating Curse","Target within 25’ gets -X to its Combat Characteristics.",0,Sorcery,2,3,4,NULL,"Sorcery 7","1+X Initiative Rounds","Major Power (Curse)"
+204,"Consult the Deities","Prereq: Dispel Power 2 - You may now also dispel enemy Divine abilities when you use Dispel Power.",0,Sorcery,2,1,4,NULL,NULL,NULL,Passive
+205,"Concealed Casting","You may take a Stealth check to prevent others from knowing you are casting a Minor Power. At level 2, may do the same for Major Powers.",0,Sorcery,3,2,4,NULL,NULL,NULL,Passive
+206,"White Magic Incantation","Double your Score for all Willpower Tests when opposing Magic. At Level 2, you may use your Willpower instead of Armor to protect against Attacks.",0,Sorcery,3,2,4,NULL,"Sorcery 10","X+2 Initiative Rounds","Glorious Power (Blessing)"
+207,"Overwhelming Power","Whenever you get a Critical Success on a Power, count your Level for that power as 2 Levels higher for purposes of resolution. This may take the power over its maximum.",0,Sorcery,3,1,4,NULL,NULL,NULL,Passive
+208,"Divine Mediator","You get a Divinity Point. It must be used to increase the level of a Power you have. If all current Powers with Points in them are at maximum level, you may spend it on a new Power.",0,Devotion,1,1,5,NULL,NULL,NULL,Passive
+209,Beseech,"Reroll one dice result of 1 on Invocation Tests. At level 2, you may reroll a dice result of 2. At level 3, up to two dice results of 1 or 2.",0,Devotion,1,3,5,NULL,NULL,NULL,Passive
+210,"Tender Care","You get +X to your Healing Scores.",0,Devotion,1,2,5,NULL,NULL,NULL,Passive
+211,"Bless Animal","Using a Perception check, you can determine if an animal is worthy of sacrifice. If it is, you may bless it for sacrifice and it becomes a Sacrificial Animal.",0,Devotion,1,1,5,NULL,NULL,NULL,Passive
+212,"Expert Divine Mediator","Prereq: Divine Mediator 1 - You get a Divinity Point whenever this is taken. It must be used to increase the level of a Power you have. If all current Powers with Points in them are at maximum level, you may spend it on a new Power.",0,Devotion,2,2,5,NULL,NULL,NULL,Passive
+213,"Praise and Glory","You get +X to your Invocation Results.",0,Devotion,2,2,5,NULL,NULL,NULL,Passive
+214,"Answered Prayer","You may use your Minor and Major Powers X additional times per session.",0,Devotion,2,2,5,NULL,NULL,NULL,Passive
+215,"Pre-eminent Divine Mediator","Prereq: Expert Divine Mediator 1 - You get a Divinity Point whenever this is taken. It must be used to increase the level of a Power you have. If all current Powers with Points in them are at maximum level, you may spend it on a new Power.",0,Devotion,3,3,5,NULL,NULL,NULL,Passive
+216,"Forthright Prayer","Prereq: Answered Prayer 1 - You may use all Powers two additional times per session.",0,Devotion,3,1,5,NULL,NULL,NULL,Passive
+217,"Soothing Hymns","Whenever an ally uses a Faith Point to reroll a dice roll, it may further reroll the Faith Point if the result is a 1. At level 2, it may reroll the Faith Point if the result is a 2.",0,Devotion,3,2,5,NULL,NULL,NULL,Passive
+218,"Dispel Power","The Opposed Test is against the Attribute+Skill the enemy used to cast a blessing or curse. Level 2 gives +1 to your result, Level 3 gives +2 instead. If you win the Opposed Test, remove that blessing or curse.",0,Ritual,1,3,5,NULL,"Faith + Invocation Opposed",NULL,"Minor Power"
+219,"Healing Word","A target ally within 20’ regains a number of HP equal to the difference of your success and the challenge rating + X.",0,Ritual,1,4,5,NULL,"Healing 7",NULL,"Major Power"
+220,"I Say A Little Prayer","You may use your Minor and Major Powers an additional time per session.",0,Ritual,1,1,5,NULL,NULL,NULL,Passive
+221,"Healing Aura","Prereq: Healing Word 3 - You and allies within 5’ of you heal HP equal to the difference of your success and the challenge rating + X.",0,Ritual,2,2,5,NULL,"Healing 10",NULL,"Major Power"
+222,"Salt Circle","When you use Salt Circle, you must discard a Salt item from your Inventory. If you do, draw a circle (Circumference ~16’, Diameter ~5’) around you. Evil beings to pass a Willpower 7+X test to attack you and/or any ally wholly within it.",0,Ritual,2,2,5,NULL,NULL,NULL,"Major Action (Tactical)"
+223,"Blessed Sacrifice","Ordain an animal as a sacrifice, and make a sacrifice.",0,Ritual,2,1,5,NULL,"Invocation 9",NULL,"Major Power"
+224,"Improved Results","You may use an additional component whenever you use a Healing power. If you do, double the results of the Healing.",0,Ritual,3,1,5,NULL,NULL,NULL,Passive
+225,"Direct Conduit","Prereq: Blessed Sacrifice - Whenever you use a Glorious Power slot to cast a Minor or Major Power, improve the Level of that power by 1. This may take the power over its maximum level.",0,Ritual,3,1,5,NULL,NULL,NULL,Passive
+226,Exorcise,"Target Evil magical being or Demon within 35’ must pass a Willpower 12+X Test or take 1 Divine Damage for each point it failed the test by.",0,Ritual,3,3,5,NULL,"Invocation 12",NULL,"Major Power (Curse)"
+227,"Trained Full Attack","When using any Full Attack action, you may reroll up to X dice results of 1 for Attack or Damage.",0,Champion,1,2,6,NULL,NULL,NULL,Passive
+228,Counter-Strike,"When Parrying, if you win the Opposed Test, you can Attack back using up to X Attack dice.",0,Champion,1,3,6,NULL,NULL,NULL,Passive
+229,"Eagle Eye","You count Extreme Long Range as Long Range at Level 1. At Level 2, they both count as Medium Range.",0,Champion,1,2,6,NULL,NULL,NULL,Passive
+230,Inspirational,"Whenever you kill an enemy, all allies within sight of you get +1 to their next Damage Score.",0,Champion,1,1,6,NULL,NULL,NULL,Passive
+231,"Improved Defense","When defending against multiple enemies, you get 1 bonus dice against each attacker.",0,Champion,2,1,6,NULL,NULL,NULL,Passive
+232,"Divine Notice","The first time you kill an enemy in a combat round, you get +X to your Invocation tests until combat ends.",0,Champion,2,2,6,NULL,NULL,NULL,Passive
+233,"Flurry of Blows","You may Attack a single target twice. However, you must split your Attack dice as evenly as you can between the two Attacks. At Level 2, you don’t need to split your Attack dice and use the full amount each time.",0,Champion,2,2,6,NULL,NULL,NULL,"Full Attack Action"
+234,"Shield Push","Requires an equipped Shield. After an enemy attacks you, you may pay 1 Action Point. After that attack is resolved, you can Attack back using X attack dice. Then the enemy is pushed back 2X’ whether or not they were damaged.",0,Champion,2,2,6,NULL,NULL,NULL,Passive
+235,"Impenetrable Defense","At the beginning of your activation, you may spend Action Points. For every 2 Action Points you spend, add X to your Defense Score until the next Initiative Round.",0,Champion,3,2,6,NULL,NULL,NULL,Passive
+236,"Expert Full Attack","Prereq: Trained Full Attack 1 - X times per Initiative Round, you may treat a Full Attack as a Minor Action. You must still pay the AP as if it was a Major Action",0,Champion,3,2,6,NULL,NULL,NULL,Passive
+237,"Divine Favor","Prereq: Divine Notice - The next Divine Power you use after killing an enemy in combat costs 1 AP less.",0,Champion,3,1,6,NULL,NULL,NULL,Passive
+238,"Improved Powerful Attack","When using a Powerful Attack action, you get +X to your Attack Score.",0,Slayer,1,2,6,NULL,NULL,NULL,Passive
+239,Taunt,"You get +X to your Intimidation and Persuasion Scores when attempting to incite an enemy to attack you.",0,Slayer,1,2,6,NULL,NULL,NULL,Passive
+240,"Play It Again","When using an Attack Action, if you score Critical Damage, you get X AP.",0,Slayer,1,2,6,NULL,NULL,NULL,Passive
+241,Fervor,"You get +1 to your Initiative Scores.",0,Slayer,1,1,6,NULL,NULL,NULL,Passive
+242,"Enraged Multiple Attacks","Prereq: Improved Powerful Attack 1 - When using the Multiple Strike attack, you get X bonus dice to allocate between targets.",0,Slayer,2,3,6,NULL,NULL,NULL,Passive
+243,Berserk,"You get X bonus dice when rolling to Damage, but enemies get X bonus dice to Damage against you.",0,Slayer,2,2,6,NULL,NULL,"1 Initiative Round","Minor Action (Tactical)"
+244,Overrun,"Whenever you kill an enemy, you may move up to your SPD. It must take you closer to an enemy if possible.",0,Slayer,2,1,6,NULL,NULL,NULL,Passive
+245,"Overwhelming Attack","Attack a single target. You may spend up to 2X Action Points as you attack. Add 1 to your Attack Score for each Action Point spent this way.",0,Slayer,2,2,6,NULL,NULL,NULL,"Full Attack Action"
+246,"The Rush Of Battle","Prereq: Overrun, Fervor - Whenever you kill an enemy, roll XD6. If you get at least one result of 6, you get an Action Point.",0,Slayer,3,3,6,NULL,NULL,NULL,Passive
+247,"Adrenaline Surge","For the rest of Combat, you may perform one additional Minor or Major Action when you Activate and may spend up 4 AP per Activation. You may perform any Movement or Attack Action an additional time.",0,Slayer,3,1,6,NULL,NULL,NULL,"Glorious Action"
+248,"Leaping Strike","You may move up to your SPD + X, ignoring intervening obstacles 6’ or lower and attack an enemy with a melee weapon. You get +X to your Attack Score. This movement does not provoke Attacks of Opportunity.",0,Slayer,3,1,6,NULL,NULL,NULL,"Glorious Action (Attack)"
+249,"Accurate Focused Attack","You get +X to your Score when using a Focused Attack",0,Subterfuge,1,2,7,NULL,NULL,NULL,Passive
+250,"Hyper Critical Attack","When using a Focused Attack, a single dice result of 6 when rolling to Attack is a Critical Hit. At Level 2, a single dice result of 6 when rolling to Damage is Critical Damage. Further rolls of 6 give +1 to the roll as well.",0,Subterfuge,1,2,7,NULL,NULL,NULL,Passive
+251,"Evade Detection","You get +X to your Stealth Scores",0,Subterfuge,1,3,7,NULL,NULL,NULL,Passive
+252,"Deceptive Strike","Attack a single target. Your target gets -X to their Defense Score.",0,Subterfuge,2,2,7,NULL,NULL,NULL,"Full Attack Action"
+253,Assassination,"When attacking an Unaware or Surprised Enemy, you get +X to your Attack Scores.",0,Subterfuge,2,3,7,NULL,NULL,NULL,Passive
+254,"Never Saw Them","Prereq: Evade Detection 3 - Add your Dodge Rating to your Stealth Scores. This bonus is lost in any combat where you attack.",0,Subterfuge,2,1,7,NULL,NULL,NULL,Passive
+255,Ouch,"Add X to the challenge of enemies finding your traps.",0,Subterfuge,2,2,7,NULL,NULL,NULL,Passive
+256,"Disarming Strike","Attack a single target. If you hit your target, they drop a weapon they are currently equipped with.",0,Subterfuge,3,1,7,NULL,NULL,NULL,"Full Attack Action"
+257,"Disengaging Strike","Attack a single target. When you hit your target, you may immediately move up to your SPD + X away. This movement will not provoke an Attack of Opportunity, and can ignore any obstacles under 5’ high.",0,Subterfuge,3,2,7,NULL,NULL,NULL,"Full Attack Action"
+258,"Sower of Doubt","Whenever you successfully pass an Intimidation, Seduction, or Persuasion check - also decrease the target’s INT and WIS by X for the next minute/Initiative Round.",0,Subterfuge,3,2,7,NULL,NULL,NULL,Passive
+259,Con,"You get +X to your Persuasion Scores",0,Infiltration,1,3,7,NULL,NULL,NULL,Passive
+260,"Mental Wounds Never Heal","You get +X to Intimidation Scores",0,Infiltration,1,3,7,NULL,NULL,NULL,Passive
+261,"Gather Information","When attempting to gather information on a target, get +X to your Social Posturing Score",0,Infiltration,1,2,7,NULL,NULL,NULL,Passive
+262,"In Plain Sight","Prereq: Con - You get +X to your Disguise Scores",0,Infiltration,2,2,7,NULL,NULL,NULL,Passive
+263,"Feign Knowledge","Prereq: Gather Information 1 - You may use your Persuasion instead of Knowledge for any Knowledge check, but targets can use Social Posturing to detect. At level 2, targets get -2 to their Score.",0,Infiltration,2,2,7,NULL,NULL,NULL,Passive
+264,"Poisoned Strike","Attack a single target. If you do damage, they are Poisoned: They take 1 damage whenever they Activate.",0,Infiltration,2,2,7,NULL,NULL,"X Initiative Rounds","Full Attack Action"
+265,"The Seeker","Can Climb using Agility rather than Strength. At level 2, multiply move speed by 3 rather than 2.",0,Infiltration,2,2,7,NULL,NULL,NULL,Passive
+266,"Psychological Warfare","As a Free Action, can Intimidate a target. It gets -X to its Defense Score for the rest of the Initiative Round if it is Intimidated.",0,Infiltration,3,2,7,NULL,NULL,NULL,Passive
+267,Spymaster,"You have access to X additional Rogue Citizen, Merchant, or Informant Connections. They may be in different cities.",0,Infiltration,3,3,7,NULL,NULL,NULL,Passive
+268,"Silent Strike","Attack a single target. If you kill your target and you are undetected, no Stealth check is needed - you remain undetected.",0,Infiltration,3,1,7,NULL,NULL,NULL,"Full Attack Action"
