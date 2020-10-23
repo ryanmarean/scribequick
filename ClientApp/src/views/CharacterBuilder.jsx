@@ -27,6 +27,9 @@ const CharacterBuilder = (props) => {
     const [charInfo, setCharInfo] = useState({
         name: "",
     });
+    const updateCharInfo = (keyword, value) => {
+        setCharInfo({...setCharInfo, [keyword]: value});
+    }
 
     const [attrPoints, setAttrPoints] = useState(18);
     const [charAttrs, setCharAttrs] = useState({
@@ -41,7 +44,16 @@ const CharacterBuilder = (props) => {
         charisma: 1,
         faith: 2
     });
-    
+    const updateCharAttrs = (keyword, value) => {
+        setCharAttrs({...charAttrs, [keyword]: value});
+    }
+    const subtractAttrPoints = () => {
+        setAttrPoints(attrPoints - 1);
+    }
+    const addAttrPoints = () => {
+        setAttrPoints(attrPoints + 1);
+    }
+
     const [skillPoints, setSkillPoints] = useState(18);
     const [charSkills, setCharSkills] = useState({
         meleeWeapons: 0,
@@ -61,7 +73,7 @@ const CharacterBuilder = (props) => {
         leadership: 0,
         divination: 0,
         willpower: 0,
-        persuation: 0,
+        persuasion: 0,
         seduction: 0,
         intimidation: 0,
         disguise: 0,
@@ -71,6 +83,15 @@ const CharacterBuilder = (props) => {
         invocation: 0,
         healing: 0
     });
+    const updateCharSkills = (keyword, value) => {
+        setCharSkills({...charSkills, [keyword]: value});
+    }
+    const subtractSkillPoints = () => {
+        setSkillPoints(skillPoints - 1);
+    }
+    const addSkillPoints = () => {
+        setSkillPoints(skillPoints + 1);
+    }
 
     const [deityId, setDeityId] = useState("");
     const [roleId, setRoleId] = useState("");
@@ -80,14 +101,6 @@ const CharacterBuilder = (props) => {
 
     const changeTabHandler = (e, newValue) => {
         setTabValue(newValue);
-    }
-
-    const updateCharAttrs = (keyword, value) => {
-        setCharAttrs({...charAttrs, [keyword]: value});
-    }
-
-    const updateCharSkills = (keyword, value) => {
-        setCharSkills({...charSkills, [keyword]: value});
     }
 
     return(
@@ -104,22 +117,48 @@ const CharacterBuilder = (props) => {
                 </Tabs>
             </AppBar>
             <TabPanel value={tabValue} index={0}>
-                <BasicTab charInfo={charInfo} />
+                <BasicTab
+                    charInfo={charInfo}
+                    updateCharInfo={updateCharInfo}
+                />
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
-                <DeityTab deityId={deityId} />
+                <DeityTab
+                    deityId={deityId}
+                    setDeityId={setDeityId}
+                />
             </TabPanel>
             <TabPanel value={tabValue} index={2}>
-                <RoleTab roleId={roleId} />
+                <RoleTab
+                    roleId={roleId}
+                    setRoleId={setRoleId}
+                />
             </TabPanel>
             <TabPanel value={tabValue} index={3}>
-                <AttrTab charAttrs={charAttrs} updateCharAttrs={updateCharAttrs} />
+                <AttrTab
+                    charAttrs={charAttrs}
+                    updateCharAttrs={updateCharAttrs}
+                    attrPoints={attrPoints}
+                    subtractAttrPoints={subtractAttrPoints}
+                    addAttrPoints={addAttrPoints}
+                />
             </TabPanel>
             <TabPanel value={tabValue} index={4}>
-                <SkillsTab charSkills={charSkills} updateCharSkills={updateCharSkills} />
+                <SkillsTab
+                    charSkills={charSkills}
+                    updateCharSkills={updateCharSkills}
+                    skillPoints={skillPoints}
+                    subtractSkillPoints={subtractSkillPoints}
+                    addSkillPoints={addSkillPoints}
+                />
             </TabPanel>
             <TabPanel value={tabValue} index={5}>
-                <PowerTab powerIds={powerIds} />
+                <PowerTab
+                    deityId={deityId}
+                    roleId={roleId}
+                    powerIds={powerIds}
+                    setPowerIds={setPowerIds}
+                />
             </TabPanel>
             <TabPanel value={tabValue} index={6}>
                 <ConfirmTab
@@ -130,7 +169,7 @@ const CharacterBuilder = (props) => {
                     charAttrs={charAttrs}
                     charSkills={charSkills}
                     powerIds={powerIds}
-                    />
+                />
             </TabPanel>
         </div>
     );

@@ -1,43 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
 
 const StatInput = (props) => {
 
-    const {keyword, keywordValue, maxValue, minValue, subtractPoints, addPoints, pointsRemain, updateStats} = props;
+    const {
+        keyword, 
+        keywordValue, 
+        maxValue, 
+        minValue, 
+        subtractPoints, 
+        addPoints, 
+        pointsRemain, 
+        updateStats
+    } = props;
 
     const [value, setValue] = useState(keywordValue);
+    const [isIncreaseDisabled, setIsIncreaseDisbled] = useState(false);
+    const [isDecreaseDisabled, setIsDecreaseDisbled] = useState(false);
 
-    // const checkMinMax = () => {
-    //     if (value >= maxValue) {
-    //         document.getElementById(keyword + "IncreaseButton").removeAttribute("color");
-    //         document.getElementById(keyword + "IncreaseButton").setAttribute("disabled", "");
-    //     }
-    //     else if (value <= minValue) {
-    //         document.getElementById(keyword + "DecreaseButton").removeAttribute("color");
-    //         document.getElementById(keyword + "DecreaseButton").setAttribute("disabled", ""); 
-    //     } else {
-    //         document.getElementById(keyword + "IncreaseButton").removeAttribute("disabled", "");
-    //         document.getElementById(keyword + "IncreaseButton").setAttribute("color", "primary");
-    //         document.getElementById(keyword + "DecreaseButton").removeAttribute("disabled", "");
-    //         document.getElementById(keyword + "DecreaseButton").setAttribute("color", "secondary");
-    //     }
-    // }
+    useEffect(() => {
+        if (value >= maxValue) {
+            setIsIncreaseDisbled(true);
+        } 
+        else if (value <= minValue) {
+            setIsDecreaseDisbled(true);
+        } 
+        else {
+            setIsIncreaseDisbled(false);
+            setIsDecreaseDisbled(false);
+        }
+    },[value]);
 
-    // const checkMax = checkedElement => {
-    //     if (value >= maxValue) {
-    //         checkedElement.setAttribute("disabled", "");
-    //     } else {
-    //         checkedElement.removeAttribute("disabled");
-    //     }
-    // }
-
-    // const checkMin = checkedElement => {
-    //     if (value <= minValue) {
-    //         checkedElement.setAttribute("disabled", "");
-    //     } else {
-    //         checkedElement.removeAttribute("disabled");
-    //     }
-    // }
+    useEffect(() => {
+        updateStats(keyword, value)
+    },[value]);
 
     const increaseValue = () => {
         if (pointsRemain()) {
@@ -48,8 +44,6 @@ const StatInput = (props) => {
                 subtractPoints();
             }
         }
-        // checkMinMax();
-        updateStats(keyword, value);
     }
 
     const decreaseValue = () => {
@@ -59,16 +53,28 @@ const StatInput = (props) => {
             setValue(parseInt(value) - 1);
             addPoints();
         }
-        // checkMinMax();
-        updateStats(keyword, value);
     }
 
     return (
         <div>
             <h4>Your Score:</h4>
             <h3>{value}</h3>
-            <Button id={keyword + "IncreaseButton"} variant="contained" color="primary" disableElevation onClick={increaseValue}>+</Button>
-            <Button id={keyword + "DecreaseButton"} variant="contained" color="secondary" disableElevation onClick={decreaseValue}>-</Button>
+            <Button
+                className="IncreaseButton"
+                variant="contained"
+                color="primary"
+                disableElevation
+                disabled={isIncreaseDisabled}
+                onClick={increaseValue}>
+                +</Button>
+            <Button
+                className="DecreaseButton"
+                variant="contained"
+                color="secondary"
+                disableElevation
+                disabled={isDecreaseDisabled}
+                onClick={decreaseValue}>
+                -</Button>
         </div>
     )
 }

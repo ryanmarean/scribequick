@@ -53,12 +53,14 @@ namespace ScribeQuick.Controllers
         //     }
         // }
 
+        // Landing Page - Redirects to Login
         public IActionResult Index()
         {
             
             return View();
         }
 
+        // Player dashboard - Fetches all player Champions from db based on UserId in Session
         public IActionResult Dashboard()
         {
             if (!IsLoggedIn)
@@ -74,6 +76,7 @@ namespace ScribeQuick.Controllers
             return View(thisUser);
         }
 
+        // Instantiates Champion Creation Session and fetches all deities, roles, and powers - Deprecated as of AddReact Branch
         public IActionResult CharacterCreation()
         {
             if (!IsLoggedIn)
@@ -94,6 +97,31 @@ namespace ScribeQuick.Controllers
             return View(creationView);
         }
 
+        // Fetches Deities from db and returns as Json List (AddReact)
+        [HttpGet("/ClientApp/ScribeQuick/GetDeities")]
+        public JsonResult GetDeities()
+        {
+            List<Deity> AllDeities = db.Deities.ToList();
+            return Json(AllDeities);
+        }
+
+        // Fetches Roles from db and returns as Json List (AddReact)
+        [HttpGet("/ClientApp/ScribeQuick/GetRoles")]
+        public JsonResult GetRoles()
+        {
+            List<Role> AllRoles = db.Roles.ToList();
+            return Json(AllRoles);
+        }
+
+        // Fetches Powers from db and returns as Json List (AddReact)
+        [HttpGet("/ClientApp/ScribeQuick/GetPowers")]
+        public JsonResult GetPowers()
+        {
+            List<Power> AllPowers = db.Powers.ToList();
+            return Json(AllPowers);
+        }
+
+        // Set Chosen Deity's id in Session - Deprecated as of AddReact Branch
         [HttpGet("/choosedeity/{deityId}")]
         public JsonResult ChooseDeity(int deityId)
         {
@@ -103,6 +131,7 @@ namespace ScribeQuick.Controllers
             return Json(chosenDeity);
         }
 
+        // Set Chosen Role's id in Session - Deprecated as of AddReact Branch
         [HttpGet("/chooserole/{roleId}")]
         public JsonResult ChooseRole(int roleId)
         {
@@ -112,6 +141,7 @@ namespace ScribeQuick.Controllers
             return Json(chosenRole);
         }
 
+        // Set Chosen Power ids in Session - Deprecated as of AddReact Branch
         [HttpGet("/choosepower/{powerId}")]
         public JsonResult ChoosePower(int powerId)
         {
