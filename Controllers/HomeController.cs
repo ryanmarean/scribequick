@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using ScribeQuick.Extensions;
 using ScribeQuick.Models;
 using ScribeQuick.Models.WrapperModels;
@@ -77,24 +78,14 @@ namespace ScribeQuick.Controllers
         }
 
         // Instantiates Champion Creation Session and fetches all deities, roles, and powers - Deprecated as of AddReact Branch
+        [HttpGet]
         public IActionResult CharacterCreation()
         {
             if (!IsLoggedIn)
             {
                 return View("Index");
             }
-            List<Deity> allDeities = db.Deities.ToList();
-            List<Role> allRoles = db.Roles.ToList();
-            List<Power> allPowers = db.Powers
-                .OrderBy(tree => tree.SkillTreeName)
-                .ToList();
-            CharacterCreator creationView = new CharacterCreator()
-            {
-                Deities = allDeities,
-                Roles = allRoles,
-                Powers = allPowers,
-            };
-            return View(creationView);
+            return View("ScribeQuick");
         }
 
         // Fetches Deities from db and returns as Json List (AddReact)
@@ -117,69 +108,69 @@ namespace ScribeQuick.Controllers
         [HttpGet("/ClientApp/ScribeQuick/GetPowers")]
         public JsonResult GetPowers()
         {
-            List<Power> AllPowers = db.Powers.ToList();
+            List<Power> AllPowers = db.Powers.Where(power => power.Tier == 1).ToList();
             return Json(AllPowers);
         }
 
         // Set Chosen Deity's id in Session - Deprecated as of AddReact Branch
-        [HttpGet("/choosedeity/{deityId}")]
-        public JsonResult ChooseDeity(int deityId)
-        {
-            HttpContext.Session.Remove("Deity");
-            Deity chosenDeity = db.Deities.FirstOrDefault(id => id.DeityId == deityId);
-            HttpContext.Session.SetObjectAsJson("Deity",chosenDeity);
-            return Json(chosenDeity);
-        }
+        // [HttpGet("/choosedeity/{deityId}")]
+        // public JsonResult ChooseDeity(int deityId)
+        // {
+            // HttpContext.Session.Remove("Deity");
+            // Deity chosenDeity = db.Deities.FirstOrDefault(id => id.DeityId == deityId);
+            // HttpContext.Session.SetObjectAsJson("Deity",chosenDeity);
+            // return Json(chosenDeity);
+        // }
 
         // Set Chosen Role's id in Session - Deprecated as of AddReact Branch
-        [HttpGet("/chooserole/{roleId}")]
-        public JsonResult ChooseRole(int roleId)
-        {
-            HttpContext.Session.Remove("Role");
-            Role chosenRole = db.Roles.FirstOrDefault(id => id.RoleId == roleId);
-            HttpContext.Session.SetObjectAsJson("Role",chosenRole);
-            return Json(chosenRole);
-        }
+        // [HttpGet("/chooserole/{roleId}")]
+        // public JsonResult ChooseRole(int roleId)
+        // {
+            // HttpContext.Session.Remove("Role");
+            // Role chosenRole = db.Roles.FirstOrDefault(id => id.RoleId == roleId);
+            // HttpContext.Session.SetObjectAsJson("Role",chosenRole);
+            // return Json(chosenRole);
+        // }
 
         // Set Chosen Power ids in Session - Deprecated as of AddReact Branch
-        [HttpGet("/choosepower/{powerId}")]
-        public JsonResult ChoosePower(int powerId)
-        {
-            Power chosenPower = db.Powers.FirstOrDefault(id => id.PowerId == powerId);
-            if (chosenPower.IsDivine)
-            {
-                HttpContext.Session.SetObjectAsJson("DivinePower",chosenPower);
-            }
-            else
-            {
-                HttpContext.Session.SetObjectAsJson("RolePower",chosenPower);
-            }
-            return Json(chosenPower);
-        }
+        // [HttpGet("/choosepower/{powerId}")]
+        // public JsonResult ChoosePower(int powerId)
+        // {
+            // Power chosenPower = db.Powers.FirstOrDefault(id => id.PowerId == powerId);
+            // if (chosenPower.IsDivine)
+            // {
+                // HttpContext.Session.SetObjectAsJson("DivinePower",chosenPower);
+            // }
+            // else
+            // {
+                // HttpContext.Session.SetObjectAsJson("RolePower",chosenPower);
+            // }
+            // return Json(chosenPower);
+        // }
 
-        [HttpPost]
-        public IActionResult AddCharacter(Character newCharacter)
+        [HttpPost("/ClientApp/ScribeQuick/NewChampion")]
+        public IActionResult AddCharacter([FromBody] Character newCharacter)
         {
             if(ModelState.IsValid)
             {
                 //Populate Creator, Deity, and Role from session information
-                newCharacter.Creator = db.Users.FirstOrDefault(id => id.UserId == uid);
-                newCharacter.DeityId = HttpContext.Session.GetObjectFromJson<Deity>("Deity").DeityId;
-                newCharacter.RoleId = HttpContext.Session.GetObjectFromJson<Role>("Role").RoleId;
+                newCharacter.Creator = db.Users.FirstOrDefault(id => id.UserId == 1);
+                // newCharacter.DeityId = HttpContext.Session.GetObjectFromJson<Deity>("Deity").DeityId;
+                // newCharacter.RoleId = HttpContext.Session.GetObjectFromJson<Role>("Role").RoleId;
                 
                 //Populate Divine Power and Role Power in CharacterPowers table from session
-                Power divinePowerJson = HttpContext.Session.GetObjectFromJson<Power>("DivinePower");
-                Power rolePowerJson = HttpContext.Session.GetObjectFromJson<Power>("RolePower");
+                // Power divinePowerJson = HttpContext.Session.GetObjectFromJson<Power>("DivinePower");
+                // Power rolePowerJson = HttpContext.Session.GetObjectFromJson<Power>("RolePower");
                 CharacterPower divineCharacterPower = new CharacterPower()
                 {
                     Character = newCharacter,
-                    PowerId = divinePowerJson.PowerId,
+                    PowerId = newCharacter.DivinePower,
                     CurrentLevel = 1,
                 };
                 CharacterPower roleCharacterPower = new CharacterPower()
                 {
                     Character = newCharacter,
-                    PowerId = rolePowerJson.PowerId,
+                    PowerId = newCharacter.RolePower,
                     CurrentLevel = 1,
                 };
                 db.Characters.Add(newCharacter);

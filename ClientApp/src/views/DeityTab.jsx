@@ -5,7 +5,7 @@ import DeityCard from '../components/DeityCard';
 
 const DeityTab = (props) => {
 
-    const { deityId, setDeityId } = props;
+    const { updateChampion } = props;
 
     const [deitiesList, setDeitiesList] = useState([]);
 
@@ -32,7 +32,7 @@ const DeityTab = (props) => {
                             passiveDesc={deity.passivePowerDesc}
                             criticalDesc={deity.criticalPowerDesc}
                             prefSacrifice={deity.preferredSacrifice}
-                            setDeityId={setDeityId}
+                            updateChampion={updateChampion}
                             />
                     )
                 }

@@ -3,12 +3,12 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const BasicTab = (props) => {
-    const {charInfo, updateCharInfo} = props;
+    const {champion, updateChampion} = props;
 
-    const [charName, setCharName] = useState(charInfo.name);
+    const [charName, setCharName] = useState(champion.name);
 
     useEffect(() => {
-        updateCharInfo("name",charName);
+        updateChampion("name",charName);
     },[charName]);
 
     return (

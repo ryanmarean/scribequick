@@ -4,14 +4,14 @@ import Button from '@material-ui/core/Button';
 
 const RoleCard = (props) => {
 
-    const { id, name, setRoleId } = props;
+    const { id, name, updateChampion } = props;
 
     return (
         <Card>
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>Role About</CardSubtitle>
-                <Button variant="contained" color="primary" onClick={e => setRoleId(id)}>Choose {name}</Button>
+                <Button variant="contained" color="primary" onClick={e => updateChampion("roleId", id)}>Choose {name}</Button>
             </CardBody>
         </Card>
     );

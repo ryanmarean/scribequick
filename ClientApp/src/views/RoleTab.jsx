@@ -5,7 +5,7 @@ import RoleCard from '../components/RoleCard';
 
 const RoleTab = (props) => {
 
-    const { roleId, setRoleId } = props;
+    const { updateChampion } = props;
 
     const [rolesList, setRolesList] = useState([]);
 
@@ -24,7 +24,7 @@ const RoleTab = (props) => {
                             key={i}
                             id = {role.roleId}
                             name={role.name}
-                            setRoleId={setRoleId}
+                            updateChampion={updateChampion}
                             />
                     )
                 }

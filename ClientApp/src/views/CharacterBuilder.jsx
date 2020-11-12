@@ -3,6 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
+import { Container, Row, Col } from 'reactstrap';
+
 import BasicTab from './BasicTab';
 import DeityTab from './DeityTab';
 import RoleTab from './RoleTab';
@@ -24,17 +26,11 @@ const TabPanel = (props) => {
 
 const CharacterBuilder = (props) => {
 
-    const [charInfo, setCharInfo] = useState({
+    const [champion, setChampion] = useState({
         name: "",
-    });
-    const updateCharInfo = (keyword, value) => {
-        setCharInfo({...setCharInfo, [keyword]: value});
-    }
-
-    const [attrPoints, setAttrPoints] = useState(18);
-    const [charAttrs, setCharAttrs] = useState({
-        meleeProficiency: 1,
-        rangedProficiency: 1,
+        // Attributes
+        meleeProficiency: 0,
+        rangedProficiency: 0,
         speed: 2,
         agility: 1,
         strength: 1,
@@ -42,20 +38,8 @@ const CharacterBuilder = (props) => {
         intelligence: 1,
         wisdom: 1,
         charisma: 1,
-        faith: 2
-    });
-    const updateCharAttrs = (keyword, value) => {
-        setCharAttrs({...charAttrs, [keyword]: value});
-    }
-    const subtractAttrPoints = () => {
-        setAttrPoints(attrPoints - 1);
-    }
-    const addAttrPoints = () => {
-        setAttrPoints(attrPoints + 1);
-    }
-
-    const [skillPoints, setSkillPoints] = useState(18);
-    const [charSkills, setCharSkills] = useState({
+        faith: 2,
+        // Skills
         meleeWeapons: 0,
         rangedWeapons: 0,
         traps: 0,
@@ -81,11 +65,27 @@ const CharacterBuilder = (props) => {
         barter: 0,
         socialPosturing: 0,
         invocation: 0,
-        healing: 0
-    });
-    const updateCharSkills = (keyword, value) => {
-        setCharSkills({...charSkills, [keyword]: value});
+        healing: 0,
+        // Role, Deity, Powers
+        userId: 1,
+        roleId: 0,
+        deityId: 0,
+        chosenPowers: [0,0]
+    })
+
+    const updateChampion = (keyword, value) => {
+        setChampion({...champion, [keyword]: value});
     }
+
+    const [attrPoints, setAttrPoints] = useState(18);
+    const subtractAttrPoints = () => {
+        setAttrPoints(attrPoints - 1);
+    }
+    const addAttrPoints = () => {
+        setAttrPoints(attrPoints + 1);
+    }
+
+    const [skillPoints, setSkillPoints] = useState(18);
     const subtractSkillPoints = () => {
         setSkillPoints(skillPoints - 1);
     }
@@ -93,18 +93,35 @@ const CharacterBuilder = (props) => {
         setSkillPoints(skillPoints + 1);
     }
 
-    const [deityId, setDeityId] = useState("");
-    const [roleId, setRoleId] = useState("");
-    const [powerIds, setPowerIds] = useState([]);
-
+    const [deityPowerId, setDeityPowerId] = useState("");
+    const [rolePowerId, setRolePowerId] = useState("");
+    
     const [tabValue, setTabValue] = useState(0);
-
     const changeTabHandler = (e, newValue) => {
         setTabValue(newValue);
     }
 
+    const addPower = (powerId, isDivine) => {
+        setChampion((prevState) => {
+            if (isDivine) {
+                prevState.chosenPowers[0] = powerId;
+            } else {
+                prevState.chosenPowers[1] = powerId;
+            }
+            console.log({...prevState});
+            return ({...prevState});
+        });
+    }
+
     return(
-        <div>
+        <Container>
+            <Row>
+                <Col>Champion Name: {champion.name}</Col>
+                <Col>Champion Deity: {champion.deityId}</Col>
+                <Col>Champion Role: {champion.roleId}</Col>
+                <Col>Deity Power: {deityPowerId}</Col>
+                <Col>Role Power: {rolePowerId}</Col>
+            </Row>
             <AppBar position='static'>
                 <Tabs value={tabValue} onChange={changeTabHandler}>
                     <Tab label="Basic Info" />
@@ -118,26 +135,24 @@ const CharacterBuilder = (props) => {
             </AppBar>
             <TabPanel value={tabValue} index={0}>
                 <BasicTab
-                    charInfo={charInfo}
-                    updateCharInfo={updateCharInfo}
+                    champion={champion}
+                    updateChampion={updateChampion}
                 />
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
                 <DeityTab
-                    deityId={deityId}
-                    setDeityId={setDeityId}
+                    updateChampion={updateChampion}
                 />
             </TabPanel>
             <TabPanel value={tabValue} index={2}>
                 <RoleTab
-                    roleId={roleId}
-                    setRoleId={setRoleId}
+                    updateChampion={updateChampion}
                 />
             </TabPanel>
             <TabPanel value={tabValue} index={3}>
                 <AttrTab
-                    charAttrs={charAttrs}
-                    updateCharAttrs={updateCharAttrs}
+                    champion={champion}
+                    updateChampion={updateChampion}
                     attrPoints={attrPoints}
                     subtractAttrPoints={subtractAttrPoints}
                     addAttrPoints={addAttrPoints}
@@ -145,8 +160,8 @@ const CharacterBuilder = (props) => {
             </TabPanel>
             <TabPanel value={tabValue} index={4}>
                 <SkillsTab
-                    charSkills={charSkills}
-                    updateCharSkills={updateCharSkills}
+                    champion={champion}
+                    updateChampion={updateChampion}
                     skillPoints={skillPoints}
                     subtractSkillPoints={subtractSkillPoints}
                     addSkillPoints={addSkillPoints}
@@ -154,24 +169,24 @@ const CharacterBuilder = (props) => {
             </TabPanel>
             <TabPanel value={tabValue} index={5}>
                 <PowerTab
-                    deityId={deityId}
-                    roleId={roleId}
-                    powerIds={powerIds}
-                    setPowerIds={setPowerIds}
+                    deityId={champion.deityId}
+                    roleId={champion.roleId}
+                    deityPowerId={deityPowerId}
+                    setDeityPowerId={setDeityPowerId}
+                    rolePowerId={rolePowerId}
+                    setRolePowerId={setRolePowerId}
+                    addPower = {addPower}
                 />
             </TabPanel>
             <TabPanel value={tabValue} index={6}>
                 <ConfirmTab
                     path='/confirm'
-                    charInfo={charInfo}
-                    deityId={deityId}
-                    roleId={roleId}
-                    charAttrs={charAttrs}
-                    charSkills={charSkills}
-                    powerIds={powerIds}
+                    champion={champion}
+                    deityPowerId={deityPowerId}
+                    rolePowerId={rolePowerId}
                 />
             </TabPanel>
-        </div>
+        </Container>
     );
 }
 

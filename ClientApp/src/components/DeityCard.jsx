@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 
 const DeityCard = (props) => {
 
-    const { id, name, about, passiveName, passiveDesc, criticalDesc, prefSacrifice, setDeityId } = props
+    const { id, name, about, passiveName, passiveDesc, criticalDesc, prefSacrifice, updateChampion } = props
 
     return (
         <Card className="col-6">
@@ -15,7 +15,7 @@ const DeityCard = (props) => {
                 <CardText>{passiveDesc}</CardText>
                 <CardText>{criticalDesc}</CardText>
                 <CardText>Preferred Sacrifice: {prefSacrifice}</CardText>
-                <Button variant="contained" color="primary" onClick={e => setDeityId(id)}>Choose {name}</Button>
+                <Button variant="contained" color="primary" onClick={e => updateChampion("deityId", id)}>Choose {name}</Button>
             </CardBody>
         </Card>
 
