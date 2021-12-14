@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +30,10 @@ namespace ScribeQuick
           // to access session directly from view, corresponds with: @using Microsoft.AspNetCore.Http in Views/_ViewImports.cshtml
             services.AddHttpContextAccessor();
             services.AddSession();
+
+            services.AddSpaStaticFiles(configuration => {
+                configuration.RootPath = "ClientApp/build";
+            });
         
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
@@ -48,12 +53,22 @@ namespace ScribeQuick
         
             // css, js, and image files can now be added to wwwroot folder
             app.UseStaticFiles();
+            app.UseSpaStaticFiles();
+            
             app.UseSession();
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+            
+            app.UseSpa(spa => {
+                spa.Options.SourcePath = "ClientApp";
+                if (env.IsDevelopment()) {
+                    spa.UseReactDevelopmentServer(npmScript: "start");
+                }
             });
         }
 

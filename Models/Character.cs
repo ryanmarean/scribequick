@@ -143,5 +143,10 @@ namespace ScribeQuick.Models
         // public List<Equipment> Equipment { get; set; }
         // public List<Armor> Armor { get; set; }
         // public List<Weapon> Weapons { get; set; }
+
+        [NotMapped]
+        public int DivinePower { get; set; }
+        [NotMapped]
+        public int RolePower { get; set; }
     }
 }
