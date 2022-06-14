@@ -73,6 +73,7 @@ const CharacterBuilder = (props) => {
         chosenPowers: [0,0]
     })
 
+    //Function Definitions
     const updateChampion = (keyword, value) => {
         setChampion({...champion, [keyword]: value});
     }

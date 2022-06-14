@@ -15,9 +15,6 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={CharacterBuilder} />
-        {/* <Route path='/counter' component={Counter} />
-        <Route path='/fetch-data' component={FetchData} />
-        <Route path='/builder' component={CharacterBuilder}/> */}
       </Layout>
     );
   }
