@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import StatInput from '../components/StatInput';
+import StatInput from './StatInput';
 
 const SkillsTab = (props) => {
 
@@ -100,10 +100,10 @@ const SkillsTab = (props) => {
                         />
                 </Col>
                 <Col xs="auto">
-                    <h2>Climbing</h2>
+                    <h2>Athletics</h2>
                     <StatInput
-                        keyword="climbing"
-                        keywordValue={champion.climbing}
+                        keyword="athletics"
+                        keywordValue={champion.athletics}
                         minValue={0}
                         maxValue={2}
                         subtractPoints={subtractSkillPoints}

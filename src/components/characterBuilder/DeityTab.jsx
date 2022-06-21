@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Row } from 'reactstrap';
-import DeityCard from '../components/DeityCard';
+import DeityCard from './DeityCard';
 
 const DeityTab = (props) => {
 
@@ -25,11 +25,11 @@ const DeityTab = (props) => {
                     deitiesList.map((deity, i) => 
                         <DeityCard 
                             key={i}
-                            id={deity.deityId}
-                            name={deity.name}
-                            about={deity.about}
-                            passiveName={deity.passivePowerName}
-                            passiveDesc={deity.passivePowerDesc}
+                            id={deity.id}
+                            name={deity.deity_name}
+                            about={deity.deity_description}
+                            passiveName={deity.passive_power_name}
+                            passiveDesc={deity.passive_power_desc}
                             criticalDesc={deity.criticalPowerDesc}
                             prefSacrifice={deity.preferredSacrifice}
                             updateChampion={updateChampion}

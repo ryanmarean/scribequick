@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import StatInput from '../components/StatInput';
+import StatInput from './StatInput';
 
 const AttrTab = (props) => {
 

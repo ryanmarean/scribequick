@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Container, Row } from 'reactstrap';
-import RoleCard from '../components/RoleCard';
+import RoleCard from './RoleCard';
 
 const RoleTab = (props) => {
 
@@ -10,8 +10,11 @@ const RoleTab = (props) => {
     const [rolesList, setRolesList] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/ClientApp/ScribeQuick/GetRoles')
-            .then(res => setRolesList(res.data))
+        axios.get('https://pantheonrpg.com/wp-json/wp/v2/role')
+            .then(res => {
+                setRolesList(res.data);
+                console.log(res.data);
+            })
             .catch(err => console.log.err);
     },[])
 
@@ -22,8 +25,8 @@ const RoleTab = (props) => {
                     rolesList.map((role, i) => 
                         <RoleCard
                             key={i}
-                            id = {role.roleId}
-                            name={role.name}
+                            id = {role.id}
+                            name={role.role_name}
                             updateChampion={updateChampion}
                             />
                     )

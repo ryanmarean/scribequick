@@ -5,15 +5,15 @@ import Tab from '@material-ui/core/Tab';
 import Box from '@material-ui/core/Box';
 import { Container, Row, Col } from 'reactstrap';
 
-import BasicTab from './BasicTab';
-import DeityTab from './DeityTab';
-import RoleTab from './RoleTab';
-import AttrTab from './AttrTab';
-import SkillsTab from './SkillsTab';
-import PowerTab from './PowerTab';
-import ConfirmTab from './ConfirmTab';
+import BasicTab from '../components/characterBuilder/BasicTab';
+import DeityTab from '../components/characterBuilder/DeityTab';
+import RoleTab from '../components/characterBuilder/RoleTab';
+import AttrTab from '../components/characterBuilder/AttrTab';
+import SkillsTab from '../components/characterBuilder/SkillsTab';
+import PowerTab from '../components/characterBuilder/PowerTab';
+import ConfirmTab from '../components/characterBuilder/ConfirmTab';
 
-
+//Tabs component
 const TabPanel = (props) => {
     const { children, value, index, ...other } = props;
 
@@ -24,10 +24,12 @@ const TabPanel = (props) => {
     );
 }
 
+//Main Character Builder component
 const CharacterBuilder = (props) => {
 
     const [champion, setChampion] = useState({
         name: "",
+        playerName: "",
         // Attributes
         meleeProficiency: 0,
         rangedProficiency: 0,
@@ -46,7 +48,7 @@ const CharacterBuilder = (props) => {
         block: 0,
         dodge: 0,
         stealth: 0,
-        climbing: 0,
+        athletics: 0,
         wrestle: 0,
         survival: 0,
         conjuration: 0,
@@ -118,13 +120,14 @@ const CharacterBuilder = (props) => {
         <Container>
             <Row>
                 <Col>Champion Name: {champion.name}</Col>
+                <Col>Player Name: {champion.playerName}</Col>
                 <Col>Champion Deity: {champion.deityId}</Col>
                 <Col>Champion Role: {champion.roleId}</Col>
                 <Col>Deity Power: {deityPowerId}</Col>
                 <Col>Role Power: {rolePowerId}</Col>
             </Row>
             <AppBar position='static'>
-                <Tabs value={tabValue} onChange={changeTabHandler}>
+                <Tabs value={tabValue} onChange={changeTabHandler} variant="scrollable" scrollButtons="auto">
                     <Tab label="Basic Info" />
                     <Tab label="Choose Deity" />
                     <Tab label="Choose Role" />

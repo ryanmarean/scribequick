@@ -7,7 +7,7 @@ const DeityCard = (props) => {
     const { id, name, about, passiveName, passiveDesc, criticalDesc, prefSacrifice, updateChampion } = props
 
     return (
-        <Card className="col-6">
+        <Card className="col-12">
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>{about}</CardSubtitle>
