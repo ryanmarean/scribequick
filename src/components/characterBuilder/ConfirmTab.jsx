@@ -6,17 +6,18 @@ import Button from '@material-ui/core/Button';
 import * as Realm from 'realm-web';
 const app = new Realm.App({ id: process.env.REACT_APP_REALM_APP_ID });
 const { BSON: { ObjectId }, } = Realm;
-const collection = app.currentUser.mongoClient('ScribeQuickCluster').db('ScribeQuickData').collection('champions');
+// const collection = app.currentUser.mongoClient('ScribeQuickCluster').db('ScribeQuickData').collection('champions');  Commented out for development deploy
 
 const ConfirmTab = (props) => {
 
     const { champion } = props;
 
-    const confirmChampion = async e => {
-        await collection.insertOne(champion)
-        .then(res => alert(res.data))
-        .catch(err => alert(err))
-    };
+    // Comment out for development Deployment
+    // const confirmChampion = async e => {
+    //     await collection.insertOne(champion)
+    //     .then(res => alert(res.data))
+    //     .catch(err => alert(err))
+    // };
 
     return (
         <Container>
@@ -78,7 +79,7 @@ const ConfirmTab = (props) => {
                 <Col>Divine Power: {champion.chosenPowers.deityPower.name}</Col>
                 <Col>Role Power: {champion.chosenPowers.rolePower.name}</Col>
             </Row>
-            <Button variant="contained" color="secondary" onClick={e => confirmChampion(e)}>Confirm</Button>
+            {/* <Button variant="contained" color="secondary" onClick={e => confirmChampion(e)}>Confirm</Button> */}
         </Container>
     )
 }
