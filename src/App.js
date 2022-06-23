@@ -1,33 +1,57 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
-// import { Home } from './components/Home';
-// import { FetchData } from './components/FetchData';
-// import { Counter } from './components/Counter';
+import * as Realm from 'realm-web';
+import { Button } from 'reactstrap';
+
 import CharacterBuilder from './views/CharacterBuilder';
 import CharacterViewer from './views/CharacterViewer';
 import Home from './views/Home';
 
 import './custom.css'
 
-export default class App extends Component {
-  static displayName = App.name;
+const app = new Realm.App({ id: process.env.REACT_APP_REALM_APP_ID });
 
-  render () {
-    return (
-      <Layout>
-        <Switch>
-          <Route path='/view'>
-            <CharacterViewer />
-          </Route>
-          <Route path='/builder'>
-            <CharacterBuilder />
-          </Route>
-          <Route path='/'>
-            <Home />
-          </Route>
-        </Switch>
-      </Layout>
-    );
-  }
+const UserDetail = ({ user }) => {
+  return (
+    <div>
+      <h1>Logged in with anonymous id: {user.id}</h1>
+    </div>
+  );
 }
+
+const Login = ({ setUser }) => {
+  const loginAnonymous = async () => {
+    const user = await app.logIn(Realm.Credentials.anonymous());
+    setUser(user);
+  };
+  return <Button onClick={loginAnonymous}>Log In</Button>;
+}
+
+const App = () => {
+  // static displayName = App.name;
+  const [user, setUser] = useState(app.currentUser);
+
+  return (
+    <Layout>
+      <Switch>
+        <Route path='/view'>
+          <CharacterViewer />
+        </Route>
+        <Route path='/builder'>
+          <CharacterBuilder />
+        </Route>
+        <Route path='/'>
+          <div className="App">
+            <div className="App-header">
+              {user ? <UserDetail user={user} /> : <Login setUser={setUser} />}
+            </div>
+          </div>
+        </Route>
+      </Switch>
+    </Layout>
+  );
+}
+
+// App.name = displayName;
+export default App;

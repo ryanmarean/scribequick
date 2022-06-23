@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@material-ui/core/Button';
+import AddSharpIcon from '@mui/icons-material/AddSharp';
+import RemoveSharpIcon from '@mui/icons-material/RemoveSharp';
 
 const StatInput = (props) => {
 
@@ -16,7 +18,7 @@ const StatInput = (props) => {
 
     const [value, setValue] = useState(keywordValue);
     const [isIncreaseDisabled, setIsIncreaseDisbled] = useState(false);
-    const [isDecreaseDisabled, setIsDecreaseDisbled] = useState(false);
+    const [isDecreaseDisabled, setIsDecreaseDisbled] = useState(true);
 
     useEffect(() => {
         if (value >= maxValue) {
@@ -66,7 +68,8 @@ const StatInput = (props) => {
                 disableElevation
                 disabled={isIncreaseDisabled}
                 onClick={increaseValue}>
-                +</Button>
+                <AddSharpIcon />
+            </Button>
             <Button
                 className="DecreaseButton"
                 variant="contained"
@@ -74,7 +77,8 @@ const StatInput = (props) => {
                 disableElevation
                 disabled={isDecreaseDisabled}
                 onClick={decreaseValue}>
-                -</Button>
+                <RemoveSharpIcon />
+            </Button>
         </div>
     )
 }

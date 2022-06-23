@@ -12,7 +12,7 @@ const BasicTab = (props) => {
 
     const [playerName, setPlayerName] = useState(champion.playerName);
     useEffect(() => {
-        updateChampion("name",playerName);
+        updateChampion("playerName",playerName);
     },[playerName]);
 
 
@@ -21,7 +21,7 @@ const BasicTab = (props) => {
         <div>
             <p>Champion Name:</p>
             <input id="name" type="text" value={charName} onChange={(e) => setCharName(e.target.value)} />
-            <p>Champion Name:</p>
+            <p>Player Name:</p>
             <input id="name" type="text" value={playerName} onChange={(e) => setPlayerName(e.target.value)} />
         </div>
     )

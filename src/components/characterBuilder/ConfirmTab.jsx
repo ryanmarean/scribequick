@@ -3,22 +3,20 @@ import axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 import Button from '@material-ui/core/Button';
 
+import * as Realm from 'realm-web';
+const app = new Realm.App({ id: process.env.REACT_APP_REALM_APP_ID });
+const { BSON: { ObjectId }, } = Realm;
+const collection = app.currentUser.mongoClient('ScribeQuickCluster').db('ScribeQuickData').collection('champions');
+
 const ConfirmTab = (props) => {
 
-    const { champion, deityPowerId, rolePowerId } = props;
+    const { champion } = props;
 
-    const confirmChampion = e => {
-        axios({
-            method: 'post',
-            url: 'http://localhost:5000/ClientApp/ScribeQuick/NewChampion', 
-            data: JSON.stringify(champion),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
-    }
+    const confirmChampion = async e => {
+        await collection.insertOne(champion)
+        .then(res => alert(res.data))
+        .catch(err => alert(err))
+    };
 
     return (
         <Container>
@@ -27,10 +25,11 @@ const ConfirmTab = (props) => {
             </Row>
             <Row>
                 <h3>Champion Name: {champion.name}</h3>
+                <h3>Player Name: {champion.playerName}</h3>
             </Row>
             <Row>
-                <h3 className="col">Deity: {champion.deityId}</h3>
-                <h3 className="col">Role: {champion.roleId}</h3>
+                <h3 className="col">Deity: {champion.deity.name}</h3>
+                <h3 className="col">Role: {champion.role.name}</h3>
             </Row>
                 <h3>Attributes:</h3>
             <Row>
@@ -76,8 +75,8 @@ const ConfirmTab = (props) => {
             </Row>
                 <h3>Chosen Powers:</h3>
             <Row>
-                <Col>Divine Power: {deityPowerId}</Col>
-                <Col>Role Power: {rolePowerId}</Col>
+                <Col>Divine Power: {champion.chosenPowers.deityPower.name}</Col>
+                <Col>Role Power: {champion.chosenPowers.rolePower.name}</Col>
             </Row>
             <Button variant="contained" color="secondary" onClick={e => confirmChampion(e)}>Confirm</Button>
         </Container>

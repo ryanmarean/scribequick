@@ -7,11 +7,11 @@ const RoleCard = (props) => {
     const { id, name, updateChampion } = props;
 
     return (
-        <Card>
+        <Card className="col-4">
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>Role About</CardSubtitle>
-                <Button variant="contained" color="primary" onClick={e => updateChampion("roleId", id)}>Choose {name}</Button>
+                <Button variant="contained" color="primary" onClick={e => updateChampion(id, name)}>Choose {name}</Button>
             </CardBody>
         </Card>
     );

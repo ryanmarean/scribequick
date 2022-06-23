@@ -6,11 +6,11 @@ const PowerCard = props => {
 
     const {
         id,
-        powerRoleId,
-        powerDeityId,
         name,
         desc,
         isDivine,
+        actionType,
+        actionTypeSubtext,
         skillTree,
         tier,
         skillChallenge,
@@ -18,24 +18,22 @@ const PowerCard = props => {
         duration,
         type,
         maximumLevel,
-        chosenRoleId,
-        chosenDeityId,
-        powerId,
-        setPowerId,
         addPower
     } = props;
 
-    const choosePowerHandler = (powerId, isDivine) => {
-        setPowerId(powerId);
-        addPower(powerId, isDivine);
+    const choosePowerHandler = (powerId, powerName, isDivine) => {
+        addPower(powerId, powerName, isDivine);
     }
 
     return (
-        <Card id={id} className={"isDivine" + isDivine}>
+        <Card id={id} className={`isDivine${isDivine} col-4`}>
             <CardBody>
                 <CardTitle>{name}</CardTitle>
-                <CardSubtitle>{desc}</CardSubtitle>
-                <Button variant="contained" color="primary" onClick={e => choosePowerHandler(id, isDivine)}>Choose Power</Button>
+                <CardSubtitle><em>{actionType} {actionTypeSubtext && `(${actionTypeSubtext})`}</em></CardSubtitle>
+                {skillChallenge && <CardSubtitle><em>{`${skillChallenge} - Challenge ${challengeLevel}`}</em></CardSubtitle>}
+                <CardText>{desc}</CardText>
+                {duration && <CardSubtitle><em>{`Duration: ${duration}`}</em></CardSubtitle>}
+                <Button variant="contained" color="primary" onClick={e => choosePowerHandler(id, name, isDivine)}>Choose Power</Button>
             </CardBody>
         </Card>
     );

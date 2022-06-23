@@ -69,17 +69,45 @@ const CharacterBuilder = (props) => {
         invocation: 0,
         healing: 0,
         // Role, Deity, Powers
-        userId: 1,
+        userId: 1,   //update to reflect current logged in user
         roleId: 0,
+        role: {
+            id: 0,
+            name: ""
+        },
         deityId: 0,
-        chosenPowers: [0,0]
+        deity: {
+            id: 0,
+            name: ""
+        },
+        chosenPowers: {
+            deityPower: {
+                id: 0,
+                name: ""
+            },
+            rolePower: {
+                id: 0,
+                name: ""
+            }
+        }
     })
 
     //Function Definitions
+    //Update Champion values by passing key-value pair
     const updateChampion = (keyword, value) => {
         setChampion({...champion, [keyword]: value});
     }
+    //Update the chosen Champion Deity
+    const updateChampionDeity = (deityId, deityName) => {
+        setChampion({...champion, deity: { id: deityId, name: deityName }})
+    }
 
+    //Update the chosen Champion Role
+    const updateChampionRole = (roleId, roleName) => {
+        setChampion({...champion, role: { id: roleId, name: roleName }})
+    }
+    
+    //Instantiates attribute points to spend and contains functions to add to and decrease from
     const [attrPoints, setAttrPoints] = useState(18);
     const subtractAttrPoints = () => {
         setAttrPoints(attrPoints - 1);
@@ -87,7 +115,8 @@ const CharacterBuilder = (props) => {
     const addAttrPoints = () => {
         setAttrPoints(attrPoints + 1);
     }
-
+    
+    //Instantiates skill points to spend and contains functions to add to and decrease from
     const [skillPoints, setSkillPoints] = useState(18);
     const subtractSkillPoints = () => {
         setSkillPoints(skillPoints - 1);
@@ -95,21 +124,21 @@ const CharacterBuilder = (props) => {
     const addSkillPoints = () => {
         setSkillPoints(skillPoints + 1);
     }
-
-    const [deityPowerId, setDeityPowerId] = useState("");
-    const [rolePowerId, setRolePowerId] = useState("");
     
+    //Controls Tabs component
     const [tabValue, setTabValue] = useState(0);
     const changeTabHandler = (e, newValue) => {
         setTabValue(newValue);
     }
 
-    const addPower = (powerId, isDivine) => {
+    const addPower = (powerId, powerName, isDivine) => {
         setChampion((prevState) => {
             if (isDivine) {
-                prevState.chosenPowers[0] = powerId;
+                prevState.chosenPowers.deityPower.id = powerId;
+                prevState.chosenPowers.deityPower.name = powerName;
             } else {
-                prevState.chosenPowers[1] = powerId;
+                prevState.chosenPowers.rolePower.id = powerId;
+                prevState.chosenPowers.rolePower.name = powerName;
             }
             console.log({...prevState});
             return ({...prevState});
@@ -121,10 +150,10 @@ const CharacterBuilder = (props) => {
             <Row>
                 <Col>Champion Name: {champion.name}</Col>
                 <Col>Player Name: {champion.playerName}</Col>
-                <Col>Champion Deity: {champion.deityId}</Col>
-                <Col>Champion Role: {champion.roleId}</Col>
-                <Col>Deity Power: {deityPowerId}</Col>
-                <Col>Role Power: {rolePowerId}</Col>
+                <Col>Chosen Deity: {champion.deity.name}</Col>
+                <Col>Chosen Role: {champion.role.name}</Col>
+                <Col>Deity Power: {champion.chosenPowers.deityPower.name}</Col>
+                <Col>Role Power: {champion.chosenPowers.rolePower.name}</Col>
             </Row>
             <AppBar position='static'>
                 <Tabs value={tabValue} onChange={changeTabHandler} variant="scrollable" scrollButtons="auto">
@@ -145,12 +174,12 @@ const CharacterBuilder = (props) => {
             </TabPanel>
             <TabPanel value={tabValue} index={1}>
                 <DeityTab
-                    updateChampion={updateChampion}
+                    updateChampion={updateChampionDeity}
                 />
             </TabPanel>
             <TabPanel value={tabValue} index={2}>
                 <RoleTab
-                    updateChampion={updateChampion}
+                    updateChampion={updateChampionRole}
                 />
             </TabPanel>
             <TabPanel value={tabValue} index={3}>
@@ -173,12 +202,8 @@ const CharacterBuilder = (props) => {
             </TabPanel>
             <TabPanel value={tabValue} index={5}>
                 <PowerTab
-                    deityId={champion.deityId}
-                    roleId={champion.roleId}
-                    deityPowerId={deityPowerId}
-                    setDeityPowerId={setDeityPowerId}
-                    rolePowerId={rolePowerId}
-                    setRolePowerId={setRolePowerId}
+                    deityId={champion.deity.id}
+                    roleId={champion.role.id}
                     addPower = {addPower}
                 />
             </TabPanel>
@@ -186,8 +211,6 @@ const CharacterBuilder = (props) => {
                 <ConfirmTab
                     path='/confirm'
                     champion={champion}
-                    deityPowerId={deityPowerId}
-                    rolePowerId={rolePowerId}
                 />
             </TabPanel>
         </Container>

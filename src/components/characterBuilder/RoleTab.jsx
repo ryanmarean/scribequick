@@ -10,12 +10,12 @@ const RoleTab = (props) => {
     const [rolesList, setRolesList] = useState([]);
 
     useEffect(() => {
-        axios.get('https://pantheonrpg.com/wp-json/wp/v2/role')
+        axios.get('https://pantheonrpg.com/wp-json/wp/v2/role?orderby=title&order=asc')
             .then(res => {
                 setRolesList(res.data);
                 console.log(res.data);
             })
-            .catch(err => console.log.err);
+            .catch(err => console.log(err));
     },[])
 
     return (

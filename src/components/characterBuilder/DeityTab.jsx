@@ -10,7 +10,7 @@ const DeityTab = (props) => {
     const [deitiesList, setDeitiesList] = useState([]);
 
     useEffect(() => {
-        axios.get('https://pantheonrpg.com/wp-json/wp/v2/deity')
+        axios.get('https://pantheonrpg.com/wp-json/wp/v2/deity?orderby=title&order=asc')
             .then(res => {
                 setDeitiesList(res.data);
                 console.log(res.data);

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import PowerCard from './PowerCard';
 
 const PowerTab = (props) => {
 
-    const { deityId, roleId, deityPowerId, setDeityPowerId, rolePowerId, setRolePowerId, addPower } = props;
+    const { deityId, roleId, addPower } = props;
 
     //Fetch and populate powers list for deity-based powers
     const [deityPowersList, setDeityPowersList] = useState([]);
@@ -50,6 +50,8 @@ const PowerTab = (props) => {
                             name={power.power_name}
                             desc={power.power_text}
                             isDivine={true}
+                            actionType={power.action_type}
+                            actionTypeSubtext={power.action_type_subtext}
                             skillTree={power.aspect}
                             tier={power.tier}
                             skillChallenge={power.skill_challenge}
@@ -59,8 +61,6 @@ const PowerTab = (props) => {
                             maximumLevel={power.maximum_level}
                             chosenRoleId={roleId}
                             chosenDeityId={deityId}
-                            powerId={deityPowerId}
-                            setPowerId={setDeityPowerId}
                             addPower={addPower}
                         />
                     )
@@ -81,6 +81,8 @@ const PowerTab = (props) => {
                             name={power.power_name}
                             desc={power.power_text}
                             isDivine={false}
+                            actionType={power.action_type}
+                            actionTypeSubtext={power.action_type_subtext}
                             skillTree={power.aspect}
                             tier={power.tier}
                             skillChallenge={power.skill_challenge}
@@ -90,8 +92,6 @@ const PowerTab = (props) => {
                             maximumLevel={power.maximum_level}
                             chosenRoleId={roleId}
                             chosenDeityId={deityId}
-                            powerId={rolePowerId}
-                            setPowerId={setRolePowerId}
                             addPower={addPower}
                         />
                     )

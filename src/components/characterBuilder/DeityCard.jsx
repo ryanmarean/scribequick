@@ -15,7 +15,7 @@ const DeityCard = (props) => {
                 <CardText>{passiveDesc}</CardText>
                 <CardText>{criticalDesc}</CardText>
                 <CardText>Preferred Sacrifice: {prefSacrifice}</CardText>
-                <Button variant="contained" color="primary" onClick={e => updateChampion("deityId", id)}>Choose {name}</Button>
+                <Button variant="contained" color="primary" onClick={e => updateChampion(id, name)}>Choose {name}</Button>
             </CardBody>
         </Card>
 
