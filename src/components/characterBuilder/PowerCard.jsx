@@ -26,7 +26,7 @@ const PowerCard = props => {
     }
 
     return (
-        <Card id={id} className={`isDivine${isDivine} col-4`}>
+        <Card id={id} className={`isDivine${isDivine}`}>
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle><em>{actionType} {actionTypeSubtext && `(${actionTypeSubtext})`}</em></CardSubtitle>

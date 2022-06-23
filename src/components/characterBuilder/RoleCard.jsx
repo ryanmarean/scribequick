@@ -7,7 +7,7 @@ const RoleCard = (props) => {
     const { id, name, updateChampion } = props;
 
     return (
-        <Card className="col-4">
+        <Card>
             <CardBody>
                 <CardTitle>{name}</CardTitle>
                 <CardSubtitle>Role About</CardSubtitle>
