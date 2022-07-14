@@ -1,54 +1,54 @@
-import React, { Component, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import * as Realm from 'realm-web';
 import { Button } from 'reactstrap';
 
+import MongoContext from './context/MongoContext';
 import CharacterBuilder from './views/CharacterBuilder';
 import CharacterViewer from './views/CharacterViewer';
-import Home from './views/Home';
+import Login from './views/Login';
+import Dashboard from './views/Dashboard';
 
 import './custom.css'
 
-const app = new Realm.App({ id: process.env.REACT_APP_REALM_APP_ID });
-
-const UserDetail = ({ user }) => {
-  return (
-    <div>
-      <h1>Logged in with anonymous id: {user.id}</h1>
-    </div>
-  );
-}
-
-const Login = ({ setUser }) => {
-  const loginAnonymous = async () => {
-    const user = await app.logIn(Realm.Credentials.anonymous());
-    setUser(user);
-  };
-  return <Button onClick={loginAnonymous}>Log In</Button>;
-}
-
 const App = () => {
   // static displayName = App.name;
-  const [user, setUser] = useState(app.currentUser);
+  const [client, setClient] = useState(null);
+  const [user, setUser] = useState(null);
+  const [app, setApp] = useState(new Realm.App({id: process.env.REACT_APP_REALM_APP_ID}));
+  
+  useEffect(() => {
+    const init = async () => {
+      if (!user) {
+        setUser(app.currentUser ? app.currentUser : await app.logIn(Realm.Credentials.anonymous()));
+      }
+      if (!client) {
+        setClient(app.currentUser.mongoClient('mongodb-atlas'));
+      }
+    }
+  
+    init();
+  }, [app, client, user]);
+  
+  const renderComponent = (Component, additionalProps = {}) => {
+    return (
+    <MongoContext.Consumer>
+      {(mongoContext) => <Component mongoContext={mongoContext} {...additionalProps} />}
+    </MongoContext.Consumer>
+    );
+  }
 
   return (
     <Layout>
-      <Switch>
-        <Route path='/view'>
-          <CharacterViewer />
-        </Route>
-        <Route path='/builder'>
-          <CharacterBuilder />
-        </Route>
-        <Route path='/'>
-          <div className="App">
-            <div className="App-header">
-              {user ? <UserDetail user={user} /> : <Login setUser={setUser} />}
-            </div>
-          </div>
-        </Route>
-      </Switch>
+      <MongoContext.Provider value={{app, client, user, setClient, setUser, setApp}}>
+        <Switch>
+          <Route path='/dashboard' render={() => renderComponent(Dashboard)} />
+          <Route path='/login' render={() => renderComponent(Login)} />
+          <Route path='/view' render={() => renderComponent(CharacterViewer)} />
+          <Route path='/builder' render={() => renderComponent(CharacterBuilder)} />
+        </Switch>
+      </MongoContext.Provider>
     </Layout>
   );
 }

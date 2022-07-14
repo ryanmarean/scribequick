@@ -53,7 +53,7 @@ const ConfirmTab = (props) => {
                 <Col>Block: {champion.block}</Col>
                 <Col>Dodge: {champion.dodge}</Col>
                 <Col>Stealth: {champion.stealth}</Col>
-                <Col>Climbing: {champion.climbing}</Col>
+                <Col>Climbing: {champion.athletics}</Col>
                 <Col>Wrestle: {champion.wrestle}</Col>
                 <Col>Survival: {champion.survival}</Col>
                 <Col>Conjuration: {champion.conjuration}</Col>

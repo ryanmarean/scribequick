@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Home = (props) => {
+const Dashboard = (props) => {
     return (
         <div>
             <h1>Welcome to the ScribeQuick Character Builder for the Pantheon: Genesis RPG system! Click "Character Builder" in the navigation menu to get started.</h1>
@@ -8,4 +8,4 @@ const Home = (props) => {
     );;
 }
 
-export default Home;
+export default Dashboard;
